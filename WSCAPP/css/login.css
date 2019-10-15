@@ -1,0 +1,31 @@
+.centers{
+    width: 100%;
+    position: absolute;
+    top:0;
+}
+.username,.password{
+    border:none;
+    outline:none;
+    border-bottom: 1px solid #fff;
+    width: 80%;
+    background: none;
+    border-radius: 1px;
+    margin-top: 8%;height: 30px;
+    font-size: 18px;
+    color: #fff;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #fff; opacity:1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #fff;opacity:1;
+}
+
+input:-ms-input-placeholder{
+    color: #fff;opacity:1;
+}
+
+input::-webkit-input-placeholder{
+    color: #fff;opacity:1;
+}

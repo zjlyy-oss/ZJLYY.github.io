@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+     <title>个人中心-未登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../css/mui.css" rel="stylesheet"/>
+    <link href="../css/iconfont.css" rel="stylesheet"/> 
+    <link href="../css/jkdApp.css" rel="stylesheet"/>
+    <link href="../css/cui.css" rel="stylesheet"/>
+    <link href="../css/feedback-page.css" rel="stylesheet" />
+    <style type="text/css">
+	html,body {background-color: #efeff4;}
+	.mui-views,.mui-view,.mui-pages,.mui-page,.mui-page-content {position: absolute;left: 0;right: 0;top: 0;bottom: 0;
+		width: 100%;height: 100%;background-color: #efeff4;}
+	.mui-pages {top: 46px;height: auto;}
+	.mui-scroll-wrapper,.mui-scroll {background-color: #efeff4;}
+	.mui-scroll-wrapper1,.mui-scroll1 {background-color: #FFFFFF;}
+	.mui-page.mui-transitioning {-webkit-transition: -webkit-transform 300ms ease;transition: transform 300ms ease;}
+	.mui-page-left {-webkit-transform: translate3d(0, 0, 0);transform: translate3d(0, 0, 0);}
+	.mui-ios .mui-page-left {-webkit-transform: translate3d(-20%, 0, 0);transform: translate3d(-20%, 0, 0);}
+	.mui-navbar {position: fixed;right: 0;left: 0;z-index: 10;height: 44px;background-color: #fe5054;}
+	.mui-navbar .mui-bar {position: absolute;background: transparent;text-align: center;}
+	.mui-android .mui-navbar-inner.mui-navbar-left {opacity: 0;}
+	.mui-ios .mui-navbar-left .mui-left,.mui-ios .mui-navbar-left .mui-center,.mui-ios .mui-navbar-left .mui-right {opacity: 0;}
+	.mui-navbar .mui-btn-nav {-webkit-transition: none;transition: none;-webkit-transition-duration: .0s;transition-duration: .0s;}
+	.mui-navbar .mui-bar .mui-title {display: inline-block;width: auto;}
+	.mui-page-shadow {position: absolute;right: 100%;top: 0;width: 16px;height: 100%;z-index: -1;content: '';}
+	.mui-page-shadow {background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);}
+	.mui-navbar-inner.mui-transitioning,.mui-navbar-inner .mui-transitioning {-webkit-transition: opacity 300ms ease, -webkit-transform 300ms ease;transition: opacity 300ms ease, transform 300ms ease;}
+	.mui-page {display: none;}
+	.mui-pages .mui-page {display: block;}
+	.mui-page .mui-table-view:first-child {margin-top: 10px;}
+	.mui-page .mui-table-view:last-child {margin-bottom: 30px;}
+	.mui-table-view {margin-top: 20px;}
+	.mui-table-view span.mui-pull-right {color: #999;}
+	.mui-table-view-divider {background-color: #efeff4;font-size: 14px;}
+	.mui-table-view-divider:before,.mui-table-view-divider:after {height: 0;}
+	.head {height: 40px;}
+	#head {line-height: 40px;}
+	.head-img {width: 40px;height: 40px;}
+	#head-img1 {position: absolute;bottom: 10px;right: 40px;width: 40px;height: 40px;}
+	.update {font-style: normal;color: #999999;margin-right: -25px;font-size: 15px}
+	.mui-fullscreen {position: fixed;z-index: 20;background-color: #000;}
+	.mui-ios .mui-navbar .mui-bar .mui-title {position: static;}
+	.mui-icon-location:before{ font-size: 18px;}
+	
+	.shouhuopic{ width: 39%; margin: 0 auto; margin-top: 30%; text-align: center; background-color: #f0f0f0; padding: 10% 0;
+		border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; -o-border-radius: 50%;
+	}
+	.shouhuopic img{ max-width: 50%;}
+	.shouhuo-p{ margin-top: 10px; font-size: 18px; }
+	.mui-bar .cui-btn-color{ color: #FFFFFF;}
+	.cui-btn{ margin: 0 auto; width: 26%; margin-top: 10px; padding: 5px 0; }
+	/* 支付宝设置 */
+	.shezhi-zhifubao{ padding-right: 15px;}
+	.cui-dizhi .mui-button-row{ border: 0;}
+	.icon-shanchu:before{font-size: 21px;}
+	</style>
+</head>
+<body style="padding-bottom: 57px;">
+<!--页面主结构开始-->
+<div id="app" class="mui-views cui-views cui-shezhi-page">
+	<div class="mui-view">
+		<div class="mui-navbar">
+		</div>
+		<div class="mui-pages">
+		</div>
+	</div>
+</div>
+<div id="setting" class="mui-page">
+	<!--页面标题栏开始-->
+	<div class="mui-navbar-inner mui-bar mui-bar-nav">
+		<a class="mui-left mui-action-back mui-pull-left back_prev"></a>
+		<h1 class="mui-center mui-title">设置</h1>
+	</div>
+	<!--页面标题栏结束-->
+	<!--页面主内容区开始-->
+	<div class="mui-page-content">
+		<div class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul class="mui-table-view cui-li-view">
+					<li class="mui-table-view-cell">
+						<a class="shezhi-tongzhi icon-shezhi-tongzhi">
+							接收通知<span>打开通知，不错过任何好商品</span>
+							<div class="mui-switch mui-switch-mini mui-active">
+								<div class="mui-switch-handle"></div>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#shezhi_dizhi" class="mui-navigate-right shezhi-dizhi icon-shezhi-dizhi">
+							收货地址管理
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#shezhi_zijin" class="mui-navigate-right iconfont_tk icon-tixian">
+							退款和提现账户管理
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right mui-icon mui-icon-locked" id="xiugaimima">
+							修改密码
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="iconfont_addr icon-shanchu">
+							清除缓存<span>9.9MB</span>
+						</a>
+					</li>
+				</ul>
+				<div class="mui-button-row">
+					<button type="button" id="tuichu" class="mui-btn mui-text-center mui-btn-block mui-button-red">退出当前账号</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--页面主内容区结束-->
+</div>
+<div id="shezhi_dizhi" class="mui-page cui-shezhi-page">
+	<!--页面标题栏开始-->
+	<div class="mui-navbar-inner mui-bar mui-bar-nav">
+		<a class="mui-left mui-action-back mui-pull-left back_prev"></a>
+		<h1 class="mui-center mui-title">收货地址</h1>
+		<a id="xinzeng" class="mui-btn mui-btn-link mui-pull-right mui-btn-blue cui-btn-color" >新增</a>
+	</div>
+	<!--页面标题栏结束-->
+	<!--页面主内容区开始-->
+	<div class="mui-page-content">
+		<div class="mui-scroll-wrapper mui-scroll-wrapper1">
+			<div class="mui-scroll mui-scroll1">
+				<div class="shouhuopic">
+					<img src="../images/shouhuo.png" />
+				</div>
+				<p class="mui-text-center shouhuo-p">收货地址为空</p>
+				<button type="button" id="xinzeng1" class="mui-btn mui-btn-danger  mui-btn-block cui-btn mui-btn-outlined">新增地址</button>
+			</div>
+		</div>
+	</div>
+	<!--页面主内容区结束-->
+</div>
+<!--还款和资金-->
+<div id="shezhi_zijin" class="mui-page cui-shezhi-page">
+	<!--页面标题栏开始-->
+	<div class="mui-navbar-inner mui-bar mui-bar-nav">
+		<a class="mui-left mui-action-back mui-pull-left back_prev"></a>
+		<h1 class="mui-center mui-title">管理资金账户</h1>
+	</div>
+	<!--页面标题栏结束-->
+	<!--页面主内容区开始-->
+	<div class="mui-page-content">
+		<div class="mui-scroll-wrapper mui-scroll-wrapper1">
+			<div class="mui-scroll mui-scroll1">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="#shezhi_zijin_zhifubao">
+							我的支付宝<span class="mui-pull-right shezhi-zhifubao">设置</span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="#shezhi_zijin_weixin">
+							我的微信<span class="mui-pull-right shezhi-zhifubao">设置</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--页面主内容区结束-->
+</div>
+<!--支付宝资金-->
+<div id="shezhi_zijin_zhifubao" class="mui-page cui-shezhi-page">
+	<!--页面标题栏开始-->
+	<div class="mui-navbar-inner mui-bar mui-bar-nav">
+		<a class="mui-left mui-action-back mui-pull-left back_prev"></a>
+		<h1 class="mui-center mui-title">新增支付宝帐号</h1>
+		<a id="xinzeng" class="mui-btn mui-btn-link mui-pull-right mui-btn-blue cui-btn-color" >保存</a>
+	</div>
+	<!--页面标题栏结束-->
+	<!--页面主内容区开始-->
+	<div class="mui-page-content">
+		<div class="mui-scroll-wrapper mui-scroll-wrapper1">
+			<div class="mui-scroll mui-scroll1">
+				<form class="mui-input-group cui-dizhi">
+					<div class="mui-input-row">
+						<label for=""><span>*</span> 支付宝帐号</label>
+						<input type="text" placeholder="请输入支付宝帐号" class="mui-input mui-input-clear" />
+					</div>
+					<div class="mui-input-row">
+						<label for=""><span>*</span> 姓名</label>
+						<input type="text" placeholder="请输入姓名" class="mui-input mui-input-clear" />
+					</div>
+					<div class="mui-button-row mui-button-row2">
+						<button type="button" class="mui-btn mui-text-center mui-btn-block mui-button-red mui-button-red2">保存</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!--页面主内容区结束-->
+</div>
+<!--微信资金-->
+<div id="shezhi_zijin_weixin" class="mui-page cui-shezhi-page">
+	<!--页面标题栏开始-->
+	<div class="mui-navbar-inner mui-bar mui-bar-nav">
+		<a class="mui-left mui-action-back mui-pull-left back_prev"></a>
+		<h1 class="mui-center mui-title">新增微信帐号</h1>
+		<a id="xinzeng" class="mui-btn mui-btn-link mui-pull-right mui-btn-blue cui-btn-color" >保存</a>
+	</div>
+	<!--页面标题栏结束-->
+	<!--页面主内容区开始-->
+	<div class="mui-page-content">
+		<div class="mui-scroll-wrapper mui-scroll-wrapper1">
+			<div class="mui-scroll mui-scroll1">
+				<form class="mui-input-group cui-dizhi">
+					<div class="mui-input-row">
+						<label for=""><span>*</span> 微信帐号</label>
+						<input type="text" placeholder="请输入微信帐号" class="mui-input mui-input-clear" />
+					</div>
+					<div class="mui-input-row">
+						<label for=""><span>*</span> 姓名</label>
+						<input type="text" placeholder="请输入姓名" class="mui-input mui-input-clear" />
+					</div>
+					<div class="mui-button-row mui-button-row2">
+						<button type="button" class="mui-btn mui-text-center mui-btn-block mui-button-red mui-button-red2">保存</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!--页面主内容区结束-->
+</div>
+<!--底部信息-->
+
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/mui.view.js "></script>
+	<script src='../js/feedback.js'></script>
+	<script src="../js/feedback-page.js"></script>
+<script type="text/javascript">
+	mui.init();
+	 //初始化单页view
+	var viewApi = mui('#app').view({
+		defaultPage: '#setting'
+	});
+	 //初始化单页的区域滚动
+	mui('.mui-scroll-wrapper').scroll();
+		var view = viewApi.view;
+	(function($) {
+		//处理view的后退与webview后退
+		var oldBack = $.back;
+		$.back = function() {
+			if (viewApi.canBack()) { //如果view可以后退，则执行view的后退
+				viewApi.back();
+			} else { //执行webview后退
+				oldBack();
+			}
+		};
+		//监听页面切换事件方案1,通过view元素监听所有页面切换事件，目前提供pageBeforeShow|pageShow|pageBeforeBack|pageBack四种事件(before事件为动画开始前触发)
+		//第一个参数为事件名称，第二个参数为事件回调，其中e.detail.page为当前页面的html对象
+		view.addEventListener('pageBeforeShow', function(e) {
+			//				console.log(e.detail.page.id + ' beforeShow');
+		});
+		view.addEventListener('pageShow', function(e) {
+			//				console.log(e.detail.page.id + ' show');
+		});
+		view.addEventListener('pageBeforeBack', function(e) {
+			//				console.log(e.detail.page.id + ' beforeBack');
+		});
+		view.addEventListener('pageBack', function(e) {
+			//				console.log(e.detail.page.id + ' back');
+		});
+	})(mui);
+</script>
+<script type="text/javascript">
+
+	var xinzeng = document.getElementById("xinzeng");
+	var xinzeng1 = document.getElementById("xinzeng1");
+
+	xinzeng.addEventListener('tap', function() {
+	  //打开关于页面
+	  mui.openWindow({
+	    url: 'addr_dizhi.html', 
+	    id:'xinzeng'
+	  });
+	});
+	xinzeng1.addEventListener('tap', function() {
+	  //打开关于页面
+	  mui.openWindow({
+	    url: 'addr_dizhi.html',
+	    id:'xinzeng1'
+	  });
+	});
+	document.getElementById('xiugaimima').addEventListener('tap', function() {
+	  //打开关于页面
+	  mui.openWindow({
+	    url: 'zhmm.html', 
+	    id:'xiugaimima'
+	  });
+	});
+	document.getElementById('tuichu').addEventListener('tap', function() {
+	  //打开未登录个人中心页面
+	  mui.openWindow({
+	    url: 'user_log_n.html', 
+	    id:'user_log_n'
+	  });
+	});
+</script>
+</body>
+</html>

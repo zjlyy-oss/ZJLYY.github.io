@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">   
+    <script src="js/mui.min.js"></script> 
+    <script src="js/app.js"></script> 
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	</head>
+	<style>
+		.wifi{ text-align: center;}
+		.wifi .wimg{ padding-top: 40%;}
+		.con{ text-align: center; padding-top: 3%;}
+		.con span{ display: block; margin-bottom: 1%; color: #ACACB4;}
+		.con button{ width: 100px; margin-top: 5px;}
+	</style>
+	<body>
+		
+			 <div class="wifi">
+			 	<div class="wimg">
+			 		<img src="images/wifi.png" width="50%">
+			 	</div>
+			 	  <div class="con">
+			 	    <span>网络请求失败!</span>
+			 	    <span>点击按钮重新加载</span>
+			 	  	<button class="mui-btn" onclick="refresh();">重新加载</button>
+			 	  </div>
+			 	   
+			 </div>
+			 
+		
+	</body>
+	<script type="text/javascript">
+function refresh() {
+          //获得主页面的webview
+			var main = plus.webview.currentWebview().parent();
+			//触发主页面的gohome事件
+			mui.fire(main,'gohome');
+
+}
+	</script>
+
+</html>

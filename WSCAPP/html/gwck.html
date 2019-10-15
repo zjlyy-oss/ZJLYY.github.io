@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+     <title>购物车(空)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <script src="../js/mui.min.js"></script> 
+    <script src="../js/app.js"></script> 
+    <link href="../css/mui.css" rel="stylesheet"/>
+    <link href="../css/iconfont.css" rel="stylesheet"/> 
+    <link href="../css/jkdApp.css" rel="stylesheet"/> 
+ <style>
+    .mui-table-view::after {content:none;} 
+	.mui-table-view-cell {padding: 10px 0}
+	.mui-table-view{margin-top: 0!important;}
+	.mui-content{ margin-bottom: 40px;}
+	.mui-content a{margin: 0!important; padding: 0!important; position: relative!important;}
+	.ckgwc{ border:1px solid #CCCCCC ; border-radius: 5px;background-color: #fff; margin-bottom: 10px;}
+	.ckgwc .title{ margin: 0 5px; border-bottom:1px solid #CCCCCC; height: 40px; line-height: 40px;}
+	.ckgwc .title span{ color: #8f8f94; font-size: 16px;}
+	.ckgwc .title a{ float: right; margin-right: 5px; color: #797979; font-size: 20px;}
+	.mui-table-view .mui-media-object {max-width: 27%;height: auto;line-height: none; margin-left: 36px; border: 1px solid #e2e2e2;} 
+	.mui-media-body p.ti{overflow: hidden; display: inline-block;
+	  text-overflow: ellipsis; color:#231815;
+	  word-wrap: break-word; font-size: 16px;
+	  white-space: normal !important;} 
+  		.mui-bar-tab .mui-tab-item1 {
+    color: #929292;
+    display:inline-block;height: 40px; line-height: 40px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 1%;
+} 
+	.mui-media-body p.sl{ position: relative; display: block;}
+  	.mui-bar-tab{ line-height: 50px;}
+	.mui-bar-tab .gwc{ width: 45%;  margin-left: 2%;border-radius: 3px; text-align: left;}
+	.mui-bar-tab .gwc span{ font-size: 16px;color: #8f8f94;}
+	.mui-bar-tab .jrgwc{margin-left: 10%; width: 40%; color: white; border-radius: 3px;}
+	.mui-bar {box-shadow:none}
+	.mui-checkbox {top:50%; margin-top: -17px; left: 5px; position: absolute; overflow: hidden; z-index: 8776; width: 30px; height: 30px;}
+	.mui-checkbox input[type="checkbox"], .mui-radio input[type="radio"] {
+		    right: 2px;
+		}
+	.mui-radio input[type="radio"]:checked:before, .mui-checkbox input[type="checkbox"]:checked:before {
+	  color: #dd524d; 
+	}
+	.kgwc{ background: #fff;}
+	.kgwc .kgwc_cont{ width: 100%; text-align: center; margin-top: 40%;}
+	.kgwc .kgwc_cont .mui-icon{ font-size:100px; color: #8f8f94;}
+	.kgwc .kgwc_cont p{ font-size:20px;}
+	.mui-table-view .mui-media-body{width: 58%; float: left;}
+	.mui-numbox{width: 90px; height: 24px;}
+	.mui-numbox [class*="mui-numbox-btn"]{width: 26px;}
+	.shijian{height: auto; background-color: #f0f0f0; font-size: 16px; }
+	.shijian p{ line-height: 18px; margin-bottom: 0; padding: 7px 0 5px 33px; color: #231815; 
+	background: url(../images/colck_icon.png)6px 4px no-repeat; background-size: 21px 22px;}
+	.kgwc{padding-top: 50px;}
+	.kgwc .kongkong{margin-top: 20%;}
+	.kgwc .img{width: 40%; margin: 0 auto 20px;}
+	.kgwc img{max-width:100%; margin: 0 auto; display: block;}
+	.kgwc p {text-align: center;}
+	.kgwc p.h2{font-size: 17px;color: #231815; margin-bottom: 5px;}
+	.kgwc a{color: #fe5054; border: 1px solid #fe5054; display: block; border-radius: 3px; text-align: center; line-height: 25px; width: 82px; height: 25px; margin: 10px auto;}
+    </style>
+   
+</head>
+<body style="background-color: #fff;">
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back  mui-pull-left back_prev"></a>
+		<h1 class="mui-title" id="title">购物车</h1>
+	</header>
+	<div class="kgwc" id="kgwc" style=" display: block;">
+		<div class="kongkong">
+			<div class="img"><img src="../images/shopCar_icon_k.png" /></div>
+		    <p class="h2">你的购物车空空如也~</p>
+		    <p style="color: #777; font-size: 14px;">快去挑点宝贝吧</p>
+		    <a href="" id="qgg">去逛逛</a>
+	    </div>
+	</div>
+</body>	
+
+<script>
+	document.getElementById('qgg').addEventListener('tap', function() {
+		  //去逛逛，返回商品首页
+		  mui.openWindow({
+		    url: 'home.html', 
+		    id:'home'
+		  });
+		});
+</script>
+</html>

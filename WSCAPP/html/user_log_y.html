@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+     <title>个人中心-已登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <script src="../js/mui.min.js"></script> 
+    <script src="../js/app.js"></script> 
+    <link href="../css/mui.css" rel="stylesheet"/>
+    <link href="../css/iconfont.css" rel="stylesheet"/> 
+    <link href="../css/jkdApp.css" rel="stylesheet"/> 
+     <style>
+    	.mui-table-view-cell{padding: 12px 15px;}
+    	.mui-table-view-cell a{font-size: 14px;}
+    </style>
+  
+  
+   
+</head>
+<body style="background-color: #f5f5f5;">
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back  mui-pull-left back_prev"></a>
+		<h1 class="mui-title" id="title">我的</h1>
+		<a id="shezhi" class=" mui-pull-right back_set"></a>
+	</header>
+	<div class="mui-content">
+		<div class="zcdl">
+			<img src="../images/user_bg.jpg" />
+			<div class="zcdl_div" style="margin-top: -70px; height: 135px;">
+				<p >
+					<span class="user" style="position: relative;">
+						<img src="../images/goods/img3322.png" />
+						<input type="file" style="position: absolute; display: inline-block; width: 100px; height: 100px; left: 0; top: 0; opacity: 0; z-index: 9999;"  />
+					</span>
+					<span class="star">
+						<i class="mui-icon iconfont_star icon-xing"></i>
+						<i class="mui-icon iconfont_star icon-xing"></i>
+						<i class="mui-icon iconfont_star icon-xing"></i>
+						<i class="mui-icon iconfont_star icon-xing"></i>
+						<i class="mui-icon iconfont_star icon-unie615"></i>
+					</span>
+					<em>1234567890</em>
+					<span class="v mui-icon iconfont_star icon-renzhengv"></span>
+				</p>
+			</div>
+		</div>
+		
+		<div class="dingdan_tit hanggao">
+			<p class="mui-icon iconfont icon-dingdan">全部订单</p>
+		</div>
+		<ul class="dd_menu">
+			<li id="wfk"><i class="mui-icon iconfont_ww icon-iconwodeyouhuiquan1"></i><span>未付款</span></li>
+			<li id="dfh"><i class="mui-icon iconfont_ww icon-daifahuo"></i><span>待发货</span></li>
+			<li id="yfh"><i class="mui-icon iconfont_ww icon-yifahuo"></i><span>已发货</span></li>
+			<li id="jycg"><i class="mui-icon iconfont_ww icon-chenggong"></i><span>交易成功</span></li>
+		</ul>
+		<ul class="mui-table-view mui-table-view-chevron">
+			<li class="mui-table-view-cell" id="addr_manage">
+				<a class="mui-navigate-right mui-icon iconfont icon-dizhi">收货地址管理</a>
+			</li>
+			<li class="mui-table-view-cell" id="collect">
+				<a class="mui-navigate-right mui-icon iconfont icon-xin">我的收藏</a>
+			</li>
+			<li class="mui-table-view-cell" id="jifen">
+				<a class="mui-navigate-right mui-icon iconfont icon-31jifen">我的积分</a>
+			</li>
+			<li class="mui-table-view-cell" id="youhui">
+				<a class="mui-navigate-right mui-icon iconfont icon-iconwodeyouhuiquan">我的优惠券</a>
+				<i style="position: absolute;right: 34px; top: 14px; font-size: 12px; color: #777;">兑换优惠券</i>
+			</li>
+			<li class="mui-table-view-cell" id="connect">
+				<a class="mui-navigate-right mui-icon iconfont icon-dianhua">联系微商城</a>
+				<i style="position: absolute;right: 34px; top: 13px; font-size: 12px; color: #777;">在线客服</i>
+			</li>
+			<li class="mui-table-view-cell" id="guanyu">
+				<a class="mui-navigate-right mui-icon iconfont icon-iconguanyuwomen">关于微商城</a>
+			</li>
+		</ul>
+	</div>
+	<script>
+		
+		//tap为mui封装的单击事件，可参考手势事件章节
+		document.getElementById('wfk').addEventListener('tap', function() {
+		  //打开订单未付款页面
+		  mui.openWindow({
+		    url: 'myOrder_pay_n.html', 
+		    id:'myOrder_pay_n'
+		  });
+		});
+		//tap为mui封装的单击事件，可参考手势事件章节
+		document.getElementById('dfh').addEventListener('tap', function() {
+		  //打开待发货列表页面
+		  mui.openWindow({
+		    url: 'myOrder_send_n.html',  
+		    id:'myOrder_send_n'
+		  });
+		});
+		//tap为mui封装的单击事件，可参考手势事件章节
+		document.getElementById('yfh').addEventListener('tap', function() {
+		  //打开关于页面
+		  mui.openWindow({
+		    url: 'myOrder_send_y.html', 
+		    id:'myOrder_send_y'
+		  });
+		});
+		//tap为mui封装的单击事件，可参考手势事件章节
+		document.getElementById('jycg').addEventListener('tap', function() {
+		  //打开关于页面
+		  mui.openWindow({
+		    url: 'myOrder_success.html', 
+		    id:'myOrder_success'
+		  });
+		});
+		
+		//tap为mui封装的单击事件，可参考手势事件章节
+		document.getElementById('addr_manage').addEventListener('tap', function() {
+		  //打开关于页面
+		  mui.openWindow({
+		    url: 'addr_manage.html', 
+		    id:'addr_manage'
+		  });
+		});
+		//tap为mui封装的单击事件，可参考手势事件章节
+		document.getElementById('collect').addEventListener('tap', function() {
+		  //打开关于页面
+		  mui.openWindow({
+		    url: 'collect.html', 
+		    id:'collect'
+		  });
+		});
+		//tap为mui封装的单击事件，可参考手势事件章节
+		document.getElementById('jifen').addEventListener('tap', function() {
+		  //打开关于页面
+		  mui.openWindow({
+		    url: 'integral.html', 
+		    id:'integral'
+		  });
+		});
+				//tap为mui封装的单击事件，可参考手势事件章节
+		document.getElementById('youhui').addEventListener('tap', function() {
+		  //打开关于页面
+		  mui.openWindow({
+		    url: 'youhui.html', 
+		    id:'youhui'
+		  });
+		});
+		document.getElementById('connect').addEventListener('tap', function() {
+		  //打开关于页面
+		  mui.openWindow({
+		    url: 'connect.html', 
+		    id:'connect'
+		  });
+		});
+						//tap为mui封装的单击事件，可参考手势事件章节
+		document.getElementById('guanyu').addEventListener('tap', function() {
+		  //打开关于页面
+		  mui.openWindow({
+		    url: 'guanyu.html', 
+		    id:'guanyu'
+		  });
+		});
+		document.getElementById('shezhi').addEventListener('tap', function() {
+		  //打开设置（已登录）页面
+		  mui.openWindow({
+		    url: 'shezhi_denglu.html', 
+		    id:'shezhi_denglu' 
+		  });
+		});
+		
+		
+	</script>
+</body>	
+
+</html>

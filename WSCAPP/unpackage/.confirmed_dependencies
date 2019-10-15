@@ -1,0 +1,30 @@
+{
+	"index.html": {
+		"resources": [
+			"html/home.html"
+		],
+		"refer": [
+			"html/user_log_n.html",
+			"html/search.html",
+			"html/home.html",
+			"Net_Error.html",
+			"html/gwc.html"
+		]
+	},
+	"html/home.html": {
+		"refer": [
+			"custom/goods_show.html",
+			"custom/list.html"
+		]
+	},
+	"html/user_log_n.html": {
+		"refer": [
+			"html/login.html"
+		]
+	},
+	"html/login.html": {
+		"refer": [
+			"html/user_log_y.html"
+		]
+	}
+}

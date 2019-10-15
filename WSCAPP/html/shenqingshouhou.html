@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>申请售后</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <script src="../js/mui.min.js"></script> 
+    <script src="../js/app.js"></script> 
+    <link href="../css/mui.css" rel="stylesheet"/>
+    <link href="../css/iconfont.css" rel="stylesheet"/> 
+    <link href="../css/jkdApp.css" rel="stylesheet"/> 
+    
+    <style>
+    	.mui-table-view-cell{padding: 0;}
+    	.mui-table-view-cell a{margin: 0!important;}
+    	.mui-table-view-cell > a.mui-active p.fgaiceng{display: block!important;}
+    </style>
+   
+</head>
+<body style="background-color: #fff; padding-bottom: 50px;">
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back  mui-pull-left back_prev"></a>
+		<h1 class="mui-title" id="title">申请售后</h1>
+	</header>
+	<div class="wfkDiv" style="margin-top: 44px;">
+		<p>待发货</p>	
+		<p>
+			<span>合计：<em>98.0</em></span>
+			<a id="shouhouxiangqing_tuihuo">申请售后</a>
+		</p>
+	</div>
+	<div class="product mui-table-view-cell">
+		<a href="">
+			<dl class="mui-navigate-right">
+				<dt><img src="../images/img/img1.jpg" class="auto100imgMax"/></dt>
+				<dd>
+					<h4>活力达秘鲁玛卡精片吗咖片 90片</h4>
+					<span><em>￥98.00</em> ×1</span>
+				</dd>
+			</dl>
+			<p class="fgaiceng"></p>
+		</a>
+	</div>
+	<p style="border-bottom: 1px solid #e5e5e5; padding: 6px 10px; font-size: 13px; color: #777;">
+		订单编号：150752789123456    2015-07-21  10:39:52
+	</p>
+	<div class="wfkDiv">
+		<p>已发货</p>	
+		<p>
+			<span>合计：<em>98.0</em></span>
+			<a>申请售后</a>
+		</p>
+	</div>
+	<div class="product mui-table-view-cell">
+		<a href="">
+			<dl class="mui-navigate-right">
+				<dt><img src="../images/img/img1.jpg" class="auto100imgMax"/></dt>
+				<dd>
+					<h4>活力达秘鲁玛卡精片吗咖片 90片</h4>
+					<span><em>￥98.00</em> ×1</span>
+				</dd>
+			</dl>
+			<p class="fgaiceng"></p>
+		</a>
+	</div>
+	<p style="border-bottom: 1px solid #e5e5e5; padding: 6px 10px; font-size: 13px; color: #777;">
+		订单编号：150752789123456    2015-07-21  10:39:52
+	</p>
+	
+</body>	
+<script type="text/javascript">
+	document.getElementById('shouhouxiangqing_tuihuo').addEventListener('tap', function() {
+	  //打开申请售后编辑页面
+	  mui.openWindow({
+	    url: 'shouhouxiangqing_tuihuo.html', 
+	    id:'shouhouxiangqing_tuihuo'
+	  });
+	});
+</script>
+</html>

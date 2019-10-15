@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+     <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <script src="js/mui.min.js"></script> 
+    <script src="js/app.js"></script> 
+    <link href="css/mui.css" rel="stylesheet"/>
+    <link href="css/iconfont.css" rel="stylesheet"/> 
+    <link href="css/jkdApp.css" rel="stylesheet"/> 
+    
+    <style>
+    	.mui-bar-tab .mui-tab-item.mui-active .icon-zhuye{
+    		    background: url(images/hone_icon_h.png)no-repeat;
+    		        background-size: 100% 100%;
+    	}
+    	.mui-bar-tab .mui-tab-item.mui-active .icon-sousuo{
+    		    background: url(images/sreach_icon_h.png)no-repeat;
+    		        background-size: 100% 100%;
+    	}
+    	.mui-bar-tab .mui-tab-item.mui-active .icon-gouwuche{
+    		    background: url(images/shopCar_icon_h.png)no-repeat;
+    		        background-size: 100% 100%;
+    	}
+    	.mui-bar-tab .mui-tab-item.mui-active .icon-wode{
+    		    background: url(images/user_icon_h.png)no-repeat;
+    		        background-size: 100% 100%;
+    	}
+    	.mui-bar-tab .mui-tab-item.mui-active .mui-tab-label{
+    		    color: #fe5054;
+    	}
+    </style>
+    
+    
+</head>
+<body>
+	<nav class="mui-bar mui-bar-tab">
+		<a id="defaultTab" class="mui-tab-item mui-active"  href="html/home.html" >
+			<span class="mui-icon iconfont  icon-zhuye"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" href="html/search.html">
+			<span class="mui-icon iconfont  icon-sousuo"></span>
+			<span class="mui-tab-label">搜索</span>
+		</a>
+		<a class="mui-tab-item" href="html/gwc.html">
+			<span class="mui-icon iconfont  icon-gouwuche"><span class="mui-badge">0</span></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="mui-tab-item" href="html/user_log_n.html">
+			<span class="mui-icon iconfont  icon-wode"></span>
+			<span class="mui-tab-label">我的</span>
+		</a>
+	</nav>
+</body>
+<script type="text/javascript" charset="utf-8">
+      	mui.init({
+				swipeBack: false
+				
+			});	      	
+		var subpages = ['html/home.html', 'html/search.html','html/gwc.html','html/user_log_n.html','Net_Error.html'];
+			var subpage_style = {
+				top: '0',
+				bottom: '52px'
+			};
+		var wangluo=false;
+			 //创建子页面，首个选项卡页面显示，其它均隐藏；
+			mui.plusReady(function() {
+					var networkinfo=true;//有网络					
+				var self = plus.webview.currentWebview();
+					if (plus.networkinfo.getCurrentType() == plus.networkinfo.CONNECTION_NONE) {
+						networkinfo=false;//无网络
+					}else
+					{
+					 networkinfo=true;
+					}
+				    if(!networkinfo)
+						{
+							 for (var i = 0; i < 5; i++) {
+								var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
+								if (i < 4) {
+									sub.hide();
+								 }
+								 self.append(sub);
+							     };
+							  wangluo=true;   
+							 mui.toast("网络异常，请检查网络设置！");
+						}else
+						{
+							for (var i = 0; i < 5; i++) {
+								var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
+								if (i > 0) {
+									sub.hide();
+								 }
+								 self.append(sub);
+							     };
+							 wangluo=false; 
+						}
+                
+				document.addEventListener( "netchange", wifi, false );  
+				plus.navigator.closeSplashscreen();
+			});
+			 //当前激活选项  
+			var activeTab = subpages[0];			
+			
+			 //选项卡点击事件
+			mui('.mui-bar-tab').on('tap', 'a', function(e) { 	
+				var targetTab = this.getAttribute('href');
+				//判断网络
+					if (plus.networkinfo.getCurrentType() == plus.networkinfo.CONNECTION_NONE) {
+							wangluo=true;
+							//显示网络错误页面
+					        plus.webview.show('Net_Error.html');
+					        innerHTML;
+			         	}else
+			         	{
+			         		
+			         		 if (targetTab == activeTab) {
+									return;
+								} 
+								
+								
+								if(wangluo){
+								var self_show = plus.webview.getWebviewById(targetTab);
+					            self_show.reload(true);
+	                           
+								}
+								
+								//显示目标选项卡
+								plus.webview.show(targetTab);
+							 wangluo=false;	
+			         	} 
+				
+				//隐藏当前;
+				plus.webview.hide(activeTab);
+				//更改当前活跃的选项卡
+				activeTab = targetTab;
+			});
+			
+			 //自定义事件，模拟点击“首页购物车”
+			document.addEventListener('gogwc', function() {
+				var gwcTab = document.querySelector("#gwcTab");
+				//模拟首页点击
+				mui.trigger(gwcTab, 'tap');
+				//切换选项卡高亮
+				var current = document.querySelector(".mui-bar-tab>.mui-tab-item.mui-active");
+				if (gwcTab !== current) { 
+					current.classList.remove('mui-active');
+					gwcTab.classList.add('mui-active');
+				}
+	var carray=['html/home.html', 'html/class.html', 'html/gwc.html', 'html/member.html','Net_Error.html','class2.html'
+];
+					var all_webview=plus.webview.all();
+					for(var i=1;i<(all_webview.length);i++) 
+					{
+						var isclose=carray.indexOf(all_webview[i].id);
+						
+						if(isclose<0)
+						{
+							all_webview[i].hide();
+			          	  plus.webview.close(all_webview[i].id,'none',0);
+				         }else if(isclose==5)
+				         {
+				         	all_webview[i].hide();
+				         }
+						
+					}
+			
+			});
+			
+//首页退出事件
+			mui.back = function() {
+				mui.confirm('确定退出应用？', '提示', ['确定', '取消'], function(e) {
+					if (e.index === 0) {
+						plus.runtime.quit();
+					}
+				});
+			};
+			
+  					
+			
+    </script>
+</html>

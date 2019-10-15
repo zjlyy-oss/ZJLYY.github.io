@@ -1,0 +1,53 @@
+{
+  "index.html": {
+    "resources": [
+      "html/home.html"
+    ],
+    "refer": [
+      "html/user_log_n.html",
+      "html/search.html",
+      "html/home.html",
+      "Net_Error.html",
+      "html/gwc.html"
+    ]
+  },
+  "html/gwc.html": {
+    "refer": [
+      "html/tijiao_order.html"
+    ]
+  },
+  "html/user_log_n.html": {
+    "refer": [
+      "html/regist.html",
+      "html/login.html"
+    ]
+  },
+  "html/home.html": {
+    "refer": [
+      "custom/list.html",
+      "html/sale_list.html",
+      "html/search.html",
+      "html/barcode.html",
+      "custom/goods_show.html"
+    ]
+  },
+  "html/barcode.html": {
+    "resources": [
+      "js/immersed.js"
+    ],
+    "refer": [
+      "html/home.html"
+    ]
+  },
+  "html/user_log_y.html": {
+    "refer": [
+      "html/guanyu.html",
+      "html/addr_manage.html"
+    ]
+  },
+  "html/login.html": {
+    "refer": [
+      "html/user_log_y.html"
+    ]
+  }
+}

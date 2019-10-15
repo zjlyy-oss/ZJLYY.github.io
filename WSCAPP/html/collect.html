@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+     <title>我的收藏</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <script src="../js/mui.min.js"></script> 
+    <script src="../js/app.js"></script> 
+    <link href="../css/mui.css" rel="stylesheet"/>
+    <link href="../css/iconfont.css" rel="stylesheet"/> 
+    <link href="../css/jkdApp.css" rel="stylesheet"/> 
+ <style>
+    .mui-table-view::after {content:none;} 
+	.mui-table-view-cell {padding: 0 0}
+	.mui-table-view{margin-top: 0!important;}
+	.mui-content a{margin: 0!important; padding:10px 0!important; position: relative!important; height: 108px;}
+	
+	.mui-table-view .mui-media-object {max-width: 112px;height: auto;line-height: none; margin-left: 36px; border: 1px solid #e2e2e2;} 
+	.mui-media-body p.ti{overflow: hidden; display: inline-block; 
+	  text-overflow: ellipsis; color:#231815;
+	  word-wrap: break-word; 
+	  white-space: normal !important;} 
+  		.mui-bar-tab .mui-tab-item1 {
+    color: #929292;
+    display:inline-block;line-height: 26px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 1%;
+} 
+	.mui-media-body p.sl{ position: relative; display: block;}
+  	.mui-bar-tab{padding: 12px 10px; height: 50px; display: block!important;}
+	.mui-bar-tab .gwc{ width: 45%; padding-right: 20px;  text-align: right; float: right;}
+	.mui-bar-tab .gwc span{ font-size: 16px;color: #fe5054;}
+	.mui-bar-tab .jrgwc{width: 88px; border-radius: 3px; height: 26px; font-size: 17px; float: right; background-color: #fe5054; line-height: 27px; text-align: center; color: #fff;}
+	.mui-bar {box-shadow:none}
+	.mui-checkbox {top:50%; margin-top: -17px; left: 5px; position: absolute; overflow: hidden; z-index: 1; width: 30px; height: 30px;}
+	.mui-checkbox input[type="checkbox"], .mui-radio input[type="radio"] {
+		    right: 2px;
+		}
+	.mui-radio input[type="radio"]:checked:before, .mui-checkbox input[type="checkbox"]:checked:before {
+	  color: #dd524d; 
+	}
+	
+	.mui-table-view-cell:last-child::before, .mui-table-view-cell:last-child::after {
+	    height: 1px;
+	}
+	.shijian h3{font-size: 17px;}
+	
+	.zhuangtai{width: 112px; height: 88px; position: absolute;left: 36px; top: 10px;}
+	.zhuangtai span {
+		    color: #fff!important;
+		    position: absolute;
+		    bottom: 8px;
+		    right: 17px;
+		    display: inline-block;
+		    height: 26px;
+		    line-height: 26px;
+		    font-size: 12px;
+		    padding: 0 6px;
+		}
+	.fgaiceng{background-color: rgba(0,0,0,0.1); top: 10px;}
+	.fgaiceng{width: 112px; height: 88px;left: 36px;}
+	.mui-table-view-cell > a.mui-active p.fgaiceng{display: block!important;}
+	.icon-shanchu{position: absolute; right: 20px; top: 56%;}
+    </style>
+   
+</head>
+<body style="background-color: #fff;">
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back  mui-pull-left back_prev"></a>
+		<h1 class="mui-title" id="title">我的收藏</h1>
+	</header>
+	
+	<div style=" display: block;padding-top: 44px;" id='gwc_list'> 
+		<div class="shijian">
+			<h3 style="margin: 17px 0 5px; padding:10px 0 10px 10px;">热卖中</h3>
+		</div>
+		<div class="mui-content" id="cart_list">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a id="12" href="javascript:;">
+						<div class="mui-checkbox">
+							<input name="checkboxd" type="checkbox" checked onClick="check()">
+						</div>
+						
+						<img src="../images/img2.jpg" class="mui-media-object mui-pull-left"/>
+						<p class="fgaiceng"></p>
+						<div class="mui-media-body" style="padding-right: 10px;">
+							<p class="ti">【活力达】秘鲁进口玛卡精片吗咖片90片</p>
+							<div>
+								<font style="font-size:17px; color: #fe5054;">￥98.00</font>
+								<span class="mui-icon iconfont_addr icon-shanchu " style="float: right; color: #E3E3E3;"></span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a id="12" href="javascript:;">
+						<div class="mui-checkbox">
+							<input name="checkboxd" type="checkbox" checked onClick="check()">
+						</div>
+						
+						<img src="../images/img2.jpg" class="mui-media-object mui-pull-left"/>
+						<p class="fgaiceng"></p>
+						<div class="mui-media-body" style="padding-right: 10px;">
+							<p class="ti">【活力达】秘鲁进口玛卡精片吗咖片90片</p>
+							<div>
+								<font style="font-size: 17px; color: #fe5054;">￥98.00</font>
+								<span class="mui-icon iconfont_addr icon-shanchu " style="float: right; color: #E3E3E3;"></span>
+							</div>
+						</div>
+					</a>
+				</li>
+				
+			</ul>
+		</div>
+		<div class="shijian">
+			<h3 style="margin: 20px 0 5px; padding:10px 0 10px 10px;">即将开始</h3>
+		</div>
+		<div class="mui-content" id="cart_list">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a id="12" href="javascript:;">
+						<div class="zhuangtai">
+							<img src="../images/jjkq.png" width="112px" height="88"/>
+							<span class="iconfont_1 icon-naozhong2">14:30:15</span>
+						</div>
+						<div class="mui-checkbox">
+							<input name="checkboxd" type="checkbox" disabled onClick="check()">
+						</div>
+						
+						<img src="../images/img2.jpg" class="mui-media-object mui-pull-left"/>
+						<p class="fgaiceng"></p>
+						<div class="mui-media-body" style="padding-right: 10px;">
+							<p class="ti">【活力达】秘鲁进口玛卡精片吗咖片90片</p>
+							<div>
+								<font style="font-size: 17px; color: #fe5054;">￥98.00</font>
+								<span class="mui-icon iconfont_addr icon-shanchu " style="float: right; color: #E3E3E3;"></span>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="shijian">
+			<h3 style="margin: 20px 0 5px; padding:10px 0 10px 10px;">已结束</h3>
+		</div>
+		<div class="mui-content" id="cart_list" style="margin-bottom: 100px;">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a id="12" href="javascript:;">
+						<div class="zhuangtai">
+							<img src="../images/yqw.png" width="112px" height="88"/>
+						</div>
+						<div class="mui-checkbox">
+							<input name="checkboxd" type="checkbox"  disabled onClick="check()">
+						</div>
+						
+						<img src="../images/img2.jpg" class="mui-media-object mui-pull-left"/>
+						<p class="fgaiceng"></p>
+						<div class="mui-media-body" style="padding-right: 10px;">
+							<p class="ti">【活力达】秘鲁进口玛卡精片吗咖片90片</p>
+							<div>
+								<font style="font-size: 17px; color: #fe5054;">￥98.00</font>
+								<span class="mui-icon iconfont_addr icon-shanchu " style="float: right; color: #E3E3E3;"></span>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+	    <nav class="mui-bar mui-bar-tab"> 		
+			<a class="mui-btn-danger mui-tab-item1 jrgwc" id="qujiesuan">
+			  	去结算
+			</a>
+			<a class="mui-tab-item1 gwc" href="javascript:;">
+				<span><font style="font-size: 17px;" id="goods_price">总计：￥0.00</font></span> 
+			</a> 
+		</nav>
+	</div>
+</body>	
+<script>
+	document.getElementById('qujiesuan').addEventListener('tap', function() {
+	  //打开交易成功页面
+	    mui.openWindow({ 
+	        url: 'tijiao_order.html', 
+	        id:'tijiao_order'
+	    });
+	});
+</script>
+</html>

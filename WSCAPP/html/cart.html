@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="css/mui.min.css" rel="stylesheet">
+    <link href="css/iconfont.css" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link href="index.css" rel="stylesheet">
+
+		<script src="js/jquery-1.9.1.min.js"></script>		
+		<script src="js/mui.min.js"></script>
+        
+		<style>
+			body{
+				color:#555555;
+			}
+			.mui-table-view:before{
+				background-color:transparent;
+			}
+			.mui-table-view:after{
+				background-color:transparent;
+			}
+			.mui-table-view-cell:after{
+				background-color:transparent;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+				color:#FF5E52;
+			}
+			.mui-bar-nav{
+				-webkit-box-shadow:none;
+				box-shadow:none;
+			}
+			.mui-bar{
+				-webkit-box-shadow:none;
+				box-shadow:none;
+			}
+			.mui-fullscreen{
+				background-color:#ffffff;
+			}
+			.yinying{
+				-webkit-box-shadow:0 1px 6px #ccc;
+				box-shadow:0 1px 6px #ccc;
+			}
+		</style>
+	</head>
+	<body>
+	<header class="mui-bar mui-bar-nav" id="chakan">
+		<div class="wu_title">购物车
+			<span style="font-size: 12px; font-weight: 100;" id="region"></span>
+			<span style="height: 25px; width:15px ; display: inline-block; margin-left: -5px;"><img src="../img/xia_la.png" style="width: 100%;"/></span>
+			<a class="wu-a-right" style="color: #000; font-weight: 100;" id="">编辑</a>
+		</div>
+	</header>
+		
+	<div class="mui-content">
+		
+		
+	</div>
+	
+	<div id="Bottom"></div>
+		
+		
+		<script type="text/javascript">
+
+
+    $(document).ready(function () {
+
+        $("#Bottom").load("inc/bottom.html");      
+
+    });  
+
+</script>
+	
+	</body>
+</html>

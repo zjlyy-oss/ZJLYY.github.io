@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+     <title>首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <script src="../js/mui.min.js"></script> 
+    <script src="../js/app.js"></script> 
+    <script src="../js/jquery-1.8.2.min.js"></script> 
+    <script src="../js/owl.carousel.js"></script> 
+    <script type="text/javascript" src="js/update.js"></script>
+    <link href="../css/mui.css" rel="stylesheet"/>
+    <link href="../css/iconfont.css" rel="stylesheet"/> 
+    <link href="../css/jkdApp.css" rel="stylesheet"/> 
+    <link href="../css/owl.carousel.css" rel="stylesheet"/> 
+    <link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+    <style>/*这是今日特卖、即将开抢样式*/
+			.mui-control-content {
+				background-color: white;
+				min-height: 615px;
+			}
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
+			}
+			.mui-active a{opacity: .64;}
+			.mui-table-view-cell > a{margin: 0!important;}
+			.mui-table-view-cell > a.mui-active p.fgaiceng{display: block!important;}
+			.mui-active p.fgaiceng{display: block!important;}
+			
+    </style>
+ 
+    
+    <script>
+    	/**
+* JavaScript脚本实现回到页面顶部示例
+* @param acceleration 速度
+* @param stime 时间间隔 (毫秒)
+**/
+function gotoTop(acceleration,stime) {
+   acceleration = acceleration || 0.1;
+   stime = stime || 10;
+   var x1 = 0;
+   var y1 = 0;
+   var x2 = 0;
+   var y2 = 0;
+   var x3 = 0;
+   var y3 = 0; 
+   if (document.documentElement) {
+       x1 = document.documentElement.scrollLeft || 0;
+       y1 = document.documentElement.scrollTop || 0;
+   }
+   if (document.body) {
+       x2 = document.body.scrollLeft || 0;
+       y2 = document.body.scrollTop || 0;
+   }
+   var x3 = window.scrollX || 0;
+   var y3 = window.scrollY || 0;
+ 
+   // 滚动条到页面顶部的水平距离
+   var x = Math.max(x1, Math.max(x2, x3));
+   // 滚动条到页面顶部的垂直距离
+   var y = Math.max(y1, Math.max(y2, y3));
+ 
+   // 滚动距离 = 目前距离 / 速度, 因为距离原来越小, 速度是大于 1 的数, 所以滚动距离会越来越小
+   var speeding = 1 + acceleration;
+   window.scrollTo(Math.floor(x / speeding), Math.floor(y / speeding));
+ 
+   // 如果距离不为零, 继续调用函数
+   if(x > 0 || y > 0) {
+       var run = "gotoTop(" + acceleration + ", " + stime + ")";
+       window.setTimeout(run, stime);
+   }
+}
+
+    </script>
+    <script>
+    window.onload=function(){
+    	var itemr;
+    	//滚动高度
+    	var scrtop = document.documentElement.scrollTop || document.body.scrollTop; 
+    	//获取浏览器高度
+    	var llqHeight = document.documentElement.clientHeight;
+    	//获取第一层距屏幕顶部距离
+    	var onetop = document.getElementById('slider').offsetTop-scrtop;
+    	//获取第二层距屏幕顶部距离
+    	var twotop = document.getElementById('zidingyi').offsetTop-scrtop;
+    	//获取第三层距屏幕顶部距离
+    	var threetop = document.getElementById('tehui').offsetTop-scrtop;
+    	//获取第四层距屏幕顶部距离
+    	var fourtop = document.getElementById('zdyDiv').offsetTop-scrtop;
+    	//获取第五层距屏幕顶部距离
+    	var fivetop = document.getElementById('tmkq').offsetTop-scrtop;
+    	var i=1;
+    	var zhi = document.documentElement.scrollTop || document.body.scrollTop; ;
+    	window.onscroll = function () { 
+    	 	scrtop = document.documentElement.scrollTop || document.body.scrollTop; 
+    	 	var n =scrtop-zhi;
+    	 	if(n>0){
+	    	 	onetop = document.getElementById('slider').offsetTop-scrtop;
+		    	twotop = document.getElementById('zidingyi').offsetTop-scrtop;
+		    	threetop = document.getElementById('tehui').offsetTop-scrtop;
+		    	fourtop = document.getElementById('zdyDiv').offsetTop-scrtop;
+		    	fivetop = document.getElementById('tmkq').offsetTop-scrtop;
+	    	 	if(twotop < llqHeight/2){
+					document.getElementById('topem').innerHTML=2;
+		    	 	document.getElementById('topem').style.display='block';
+		    	 	document.getElementById('topi').style.display='none';
+		        }else{
+		        	document.getElementById('topem').innerHTML=1;
+		    	 	document.getElementById('topem').style.display='block';
+	    	 		document.getElementById('topi').style.display='none';
+		        }
+	    	 	if(threetop < llqHeight/2){
+					document.getElementById('topem').innerHTML=3;
+					document.getElementById('topem').style.display='block';
+	    	 		document.getElementById('topi').style.display='none';
+		        }
+	    	 	if(fourtop < llqHeight/2){
+					document.getElementById('topem').innerHTML=4;
+					document.getElementById('topem').style.display='block';
+	    	 		document.getElementById('topi').style.display='none';
+		        }
+	    	 	if(fivetop < llqHeight/2){
+					document.getElementById('topem').innerHTML=5;
+					document.getElementById('topem').style.display='block';
+	    	 		document.getElementById('topi').style.display='none';
+		        }
+    	 	}
+    	 	zhi = scrtop;
+        }
+    	 
+	    itemr = setInterval(function(){
+			document.getElementById('topem').style.display='none';
+			document.getElementById('topi').style.display='block';
+			
+		},1400);
+    }
+    
+        
+    </script>
+    <script>//首页 今日特卖选项卡切换
+		function tab(Nav,Num){
+		      if(Nav.className=="cur")return;
+		      var thisNav=Nav.parentNode.id;
+		      var navName=Nav.nodeName.toLowerCase();
+		      var navList=document.getElementById(thisNav).getElementsByTagName(navName);
+		      for(var i=0;i<navList.length;i++){
+		              if(i==Num){
+		                      Nav.className="liDiv cur";
+		                      document.getElementById("cont"+i).style.display="block";
+		              }else{
+		                      navList[i].className="liDiv";
+		                      document.getElementById("cont"+i).style.display="none";
+		              }
+		      }
+		}
+	</script>
+	
+	<!--<script>
+		function fgaiceng(obj){//但凡是图片链接的点击出现灰色透明覆盖层
+			obj.nextElementSibling.style.display='block';
+			setTimeout(function(){
+				obj.nextElementSibling.style.display='none';
+			},400);
+		}
+	</script>-->
+		
+</head>
+<body>
+	    <a href="#" onclick="gotoTop();return false;" class="totop">
+	    	<em id="topem" style="display: none;">1</em>
+	    	<i id="topi" class="iconfont_top icon-fanhuidingbu"></i>
+	    </a>
+		<header class="mui-bar mui-bar-nav">
+			
+			<a class="mui-icon mui-icon-search mui-pull-right" id="search"></a>
+			<h1 class="mui-title" id="title">微商城</h1>
+		</header> 
+		<div class="mui-content">
+			<div id="slider" class="mui-slider" >
+				<div class="mui-slider-group mui-slider-loop" >
+					<div class="mui-slider-item fgaic">
+						<a href="#"><img src="../imgs/zhu1.png">
+						<p class="fgaiceng"></p></a>
+					</div>
+					<div class="mui-slider-item fgaic">
+						<a href="#"><img src="../imgs/zhu2.png">
+						<p class="fgaiceng"></p></a>
+					</div>
+					<div class="mui-slider-item fgaic">
+						<a href="#"><img src="../imgs/zhu3.png">
+						<p class="fgaiceng"></p></a>
+					</div>
+					<div class="mui-slider-item fgaic">
+						<a href="#"><img src="../imgs/zhu4.png">
+						<p class="fgaiceng"></p></a>
+					</div>
+					<div class="mui-slider-item fgaic">
+						<a href="#"><img src="../imgs/zhu5.png">
+						<p class="fgaiceng"></p></a>
+					</div>
+					<div class="mui-slider-item fgaic">
+						<a href="#"><img src="../imgs/zhu6.png">
+						<p class="fgaiceng"></p></a>
+					</div>
+				</div>
+			    <div class="mui-slider-indicator" style="padding-right: 10px;">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			<ul class=" index_menu mui-table-view mui-grid-view mui-grid-9" id="zidingyi">
+				
+	            <li class="mui-table-view-cell mui-media fgaic" style="background: none;">
+	            	<a href="#">
+	                    <span class="mui-icon mui-icon-zdy1"><img src="../imgs/biao1.png" /></span>
+	                    <div class="mui-media-body" style="background: none;">服装</div></a>
+	            </li>
+	            <li class="mui-table-view-cell mui-media fgaic" style="background: none;"><a href="#">
+	                    <span class="mui-icon mui-icon-zdy2"><img src="../imgs/biao2.png" /></span>
+	                    <div class="mui-media-body" style="background: none;">鞋包</div></a>
+	            </li>
+	            <li class="mui-table-view-cell mui-media fgaic" style="background: none;"><a href="#">
+	                    <span class="mui-icon mui-icon-zdy3"><img src="../imgs/biao3.png" /></span>
+	                    <div class="mui-media-body" style="background: none;">运动户外</div></a>
+	            </li>
+	            <li class="mui-table-view-cell mui-media fgaic" style="background: none;"><a href="#">
+	                    <span class="mui-icon mui-icon-zdy4"><img src="../imgs/biao4.png" /></span>
+	                    <div class="mui-media-body" style="background: none;">手机数码</div></a>
+	            </li>
+	            <li class="mui-table-view-cell mui-media fgaic" style="background: none;"><a href="#">
+	                    <span class="mui-icon mui-icon-zdy5"><img src="../imgs/biao5.png" /></span>
+	                    <div class="mui-media-body" style="background: none;">面部护肤</div></a>
+	            </li>
+		            
+		    </ul> 
+		    <div class="tehui" id="tehui">
+		    	<h1 class="tit"><span>今日特惠商品</span></h1>
+			    <script type="text/javascript">
+				$(function(){
+					$('#scroll').owlCarousel({
+						items: 3,
+						autoPlay: true,
+						navigation: true,
+						navigationText: ["",""],
+						scrollPerPage: true
+					});
+				});
+				</script>
+		    	<div id="scroll" class="owl-carousel">
+					<div class="item" id="fa1">
+						<div class="itemDiv fgaic mui-table-view-cell">
+							<img src="../imgs/te1.png" alt="">
+							<div class="txt">
+								<h3>华为|HUAWEI nova4e 6GB+128GB 全网通</h3>
+								<p>￥1989</p>
+							</div>
+							<p class="fgaiceng"></p>
+						</div>
+						
+					</div>
+					<div class="item" id="fa2">
+						<div class="itemDiv fgaic mui-table-view-cell">
+							<img src="../imgs/te2.png"alt="">
+							<div class="txt">
+								<h3>【多方位滋养保湿】Whoo后秘贴清颜顺滑精华液礼盒+赠4件礼</h3>
+								<p>￥700</p>
+							</div>
+						<p class="fgaiceng"></p>
+						</div>
+					</div>
+					<div class="item" id="fa3">
+						<div class="itemDiv fgaic mui-table-view-cell">
+							<img src="../imgs/te3.png" alt="">
+							<div class="txt">
+								<h3>636升一级双变频无霜对开门冰箱BCD-636WD11HPA</h3>
+								<p>￥2898</p>
+							</div>
+						<p class="fgaiceng"></p>
+						</div>
+					</div>
+					<div class="item" id="fa4">
+						<div  class="itemDiv fgaic mui-table-view-cell">
+							<img src="../imgs/te4.png" alt="">
+							<div class="txt">
+								<h3>SK-II 神仙水护肤奢享礼盒 补水保湿精华套装</h3>
+								<p>￥1980</p>
+							</div>
+						<p class="fgaiceng"></p>
+						</div>
+					</div>
+					<div class="item" id="fa5">
+						<div  class="itemDiv fgaic mui-table-view-cell">
+							<img src="../images/img1.jpg" alt=""><br />
+							<div class="txt">
+								<h3>幼儿配方奶粉幼儿配方奶粉</h3>
+								<p>￥399.0</p>
+							</div>
+						<p class="fgaiceng"></p>
+						</div>
+					</div>
+					<div class="item" id="fa6">
+						<div class="itemDiv fgaic mui-table-view-cell">
+							<img src="../imgs/te6.png"alt="">
+							<div class="txt">
+								<h3>迈克高仕女包 Mott系列 明星同款 女士斜挎单肩四方包</h3>
+								<p>￥2369</p>
+							</div>
+						<p class="fgaiceng"></p>
+						</div>
+					</div>
+					
+				</div>
+		    </div>
+		    
+			<div class="temai_kaiqiang" id="tmkq">
+				
+				<div class="tit" id="temaititle">
+					<div class="liDiv cur" onclick="tab(this,0)">
+						<span>今日特卖</span>
+					</div>
+					<div class="liDiv" onclick="tab(this,1)">
+						<span>即将开抢</span>
+					</div>
+				</div>
+				<ul class="temai_ul" id="cont0">
+			         <li id="sele_list1" class="mui-table-view-cell">
+			            <a>
+			            	<div class="pic">
+			                	<img  class="auto100img" src="../images/proImg.jpg" >
+			                	<p style="display: none;" id="p1">
+			                		<i style="display: none;" class="iconfont_1 icon-shoucangyuankongxin"></i>
+			                		
+			                	</p>	  
+			                </div>
+			                <div class="desc"><span>彩程茶叶 蜂鸣 特级毛峰滇红</span><i>精品红茶 高档环保包装</i></div>
+			                <p class="fgaiceng"></p>
+			            </a>
+			        </li>
+			         <li id="sele_list2" class="mui-table-view-cell">
+			            <a>
+			                <div class="pic">
+			                	<img class="auto100img" src="../images/proImg.jpg" >
+			                	<p style="display: none;" id="p2">
+			                		<i style="display: none;" class="iconfont_1 icon-shoucangyuankongxin"></i>
+			                		
+			                	</p>	
+			                </div>
+			                <div class="desc"><span>彩程茶叶 蜂鸣 特级毛峰滇红</span><i>精品红茶 高档环保包装</i></div>
+			                <p class="fgaiceng"></p>
+			            </a>
+			        </li>
+			         <li id="sele_list3" class="mui-table-view-cell">
+			            <a>
+			                <div class="pic">
+			                	<img  class="auto100img" src="../images/proImg.jpg" >
+			                	<p style="display: none;" id="p3">
+			                		<i style="display: none;" class="iconfont_1 icon-shoucangyuankongxin"></i>
+			                		
+			                	</p>	
+			                </div>
+			                <div class="desc"><span>彩程茶叶 蜂鸣 特级毛峰滇红</span><i>精品红茶 高档环保包装</i></div>
+			                <p class="fgaiceng"></p>
+			            </a>
+			        </li>
+			        
+				</ul>
+				<ul class="temai_ul" style="display: none;" id="cont1">
+			         <li id="sele_list" class="mui-table-view-cell">
+			            <a>
+			            	<div class="pic">
+			                	<img class="auto100img" src="../images/proImg.jpg" >
+			                	<p>
+			                		<i class="iconfont_1 icon-shoucangyuankongxin"></i>
+			                		<span class="iconfont_1 icon-naozhong2">
+			                			00:30:00后开抢
+			                		</span>
+			                	</p>	
+			                </div>
+			                <div class="desc"><span>彩程茶叶 蜂鸣 特级毛峰滇红</span><i>精品红茶 高档环保包装</i></div>
+			                <p class="fgaiceng"></p>
+			            </a>
+			        </li>
+			         <li class="mui-table-view-cell">
+			            <a>
+			                <div class="pic">
+			                	<img class="auto100img" src="../images/proImg.jpg" >
+			                	<p>
+			                		<i class="iconfont_1 icon-shoucangyuankongxin"></i>
+			                		<span class="iconfont_1 icon-naozhong2">
+			                			00:30:00后开抢
+			                		</span>
+			                	</p>	
+			                </div>
+			                <div class="desc"><span>彩程茶叶 蜂鸣 特级毛峰滇红</span><i>精品红茶 高档环保包装</i></div>
+			                <p class="fgaiceng"></p>
+			            </a>
+			        </li>
+			         <li class="mui-table-view-cell">
+			            <a>
+			                <div class="pic">
+			                	<img class="auto100img" src="../images/proImg.jpg" >
+			                	<p>
+			                		<i class="iconfont_1 icon-shoucangyuankongxin"></i>
+			                		<span class="iconfont_1 icon-naozhong2">
+			                			00:30:00后开抢
+			                		</span>
+			                	</p>	
+			                </div>
+			                <div class="desc"><span>彩程茶叶 蜂鸣 特级毛峰滇红</span><i>精品红茶 高档环保包装</i></div>
+			                <p class="fgaiceng"></p>
+			            </a>
+			        </li>
+			        
+				</ul>
+			</div>
+		</div>
+</body>
+	<script>
+	
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+				
+			});
+			//打开自定义
+			mui("#zidingyi").on("tap", 'li', function() {
+						mui.openWindow({
+							url: "../custom/list.html",
+							extras:{'hlrid':this.id},
+							id: "custom_list",
+							show:{
+							      autoShow:true
+							   },
+						    waiting:{
+									autoShow:true
+								}
+						});
+					});
+			
+					
+			
+			
+			mui("#slider").slider({interval: 3000});
+				
+			mui.plusReady(function() {
+				
+				plus.navigator.closeSplashscreen();
+				
+			});
+								//tap为mui封装的单击事件
+		document.getElementById('sele_list1').addEventListener('tap', function() {
+		  //打开专场列表页面
+		  mui.openWindow({
+		    url: 'sale_list.html', 
+		    id:'sele_list'
+		  });
+		});
+		document.getElementById('sele_list2').addEventListener('tap', function() {
+		  //打开专场列表页面
+		  mui.openWindow({
+		    url: 'sale_list.html', 
+		    id:'sele_list'
+		  });
+		});
+		document.getElementById('sele_list3').addEventListener('tap', function() {
+		  //打开专场列表页面
+		  mui.openWindow({
+		    url: 'sale_list.html', 
+		    id:'sele_list'
+		  });
+		});
+		document.getElementById('search').addEventListener('tap', function() {
+		  //打开搜索页面
+		  mui.openWindow({
+		    url: 'search.html', 
+		    id:'search'
+		  });
+		});
+		document.getElementById('fa1').addEventListener('tap', function() {
+		  //打开搜索页面
+		  mui.openWindow({
+		    url: '../custom/goods_show.html', 
+		    id:'goods_show'
+		  });
+		});
+		document.getElementById('fa2').addEventListener('tap', function() {
+		  //打开搜索页面
+		  mui.openWindow({
+		    url: '../custom/goods_show.html', 
+		    id:'goods_show'
+		  });
+		});
+		document.getElementById('fa3').addEventListener('tap', function() {
+		  //打开搜索页面
+		  mui.openWindow({
+		    url: '../custom/goods_show.html', 
+		    id:'goods_show'
+		  });
+		});
+		document.getElementById('fa4').addEventListener('tap', function() {
+		  //打开搜索页面
+		  mui.openWindow({
+		    url: '../custom/goods_show.html', 
+		    id:'goods_show'
+		  });
+		});
+		document.getElementById('fa5').addEventListener('tap', function() {
+		  //打开搜索页面
+		  mui.openWindow({
+		    url: '../custom/goods_show.html', 
+		    id:'goods_show'
+		  });
+		});
+		document.getElementById('fa6').addEventListener('tap', function() {
+		  //打开搜索页面
+		  mui.openWindow({
+		    url: '../custom/goods_show.html', 
+		    id:'goods_show'
+		  });
+		});
+		
+</script>
+</html>

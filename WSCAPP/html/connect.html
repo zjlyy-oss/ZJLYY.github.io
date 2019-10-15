@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+     <title>联系聚康达</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <script src="../js/mui.min.js"></script> 
+    <script src="../js/app.js"></script> 
+    <link href="../css/mui.css" rel="stylesheet"/>
+    <link href="../css/iconfont.css" rel="stylesheet"/> 
+    <link href="../css/jkdApp.css" rel="stylesheet"/> 
+    <style>
+    	.lianxi{background-color: #f0f0f0; padding-top: 10px;}
+    	.lianxi .lx_tit{background-color: #fff; border-bottom: 1px solid #7f7f7f; padding: 5px 10px; position: relative; height: 30px; line-height: 20px;}
+    	.lianxi .lx_tit span{font-size: 17px; padding-left: 9px;}
+    	.lianxi .lx_tit b{position: absolute; left: 10px; top: 50%;margin-top: -7px; display: inline-block;width: 2px; height: 14px; background-color: #fe5054;}
+    	.lianxi .lx_tit i{font-size: 12px; color: #777;padding-left: 4px;}
+    	.lianxi .lx_cont{background-color: #fff;padding: 7px 0; overflow: hidden;}
+    	.lianxi .lx_cont span{margin-left: 35px; color: #777; padding-top: 20px; display: block; float: left; position: relative; }
+    	.lianxi .lx_cont span i{position: absolute; left: 50%; top: 0; margin-left: -12px;color: #fe5054;}
+    </style>
+</head>
+<body style="background-color: #fff;">
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back  mui-pull-left back_prev"></a>
+		<h1 class="mui-title" id="title">联系聚康达</h1>
+	</header>
+	<div class="lianxi" style="margin-top: 44px;">
+		<div class="lx_tit">
+			<b></b>
+			<span>联系客服 </span>
+			<i>(早8:30-晚22:00)</i>
+		</div>
+		<div class="lx_cont">
+			<span>
+				<i class="mui-icon mui-icon-chatbubble"></i>在线客服
+			</span>
+			<span>
+				<i class="iconfont_lx icon-dianhua1" style="font-size: 18px;"></i>客服热线
+			</span>
+		</div>
+	</div>
+	<div class="lianxi">
+		<div class="lx_tit">
+			<b></b>
+			<span>售后服务 </span>
+		</div>
+		<div class="lx_cont">
+			<span id="shenqingshouhou">
+				<i class="iconfont_lx icon-shouhoufuwu" style="font-size: 22px;"></i>申请售后
+			</span>
+			<span id="shouhouxiangqing">
+				<i class="iconfont_lx icon-serviceshandiantuikuan" style="font-size: 20px;"></i>售后详情
+			</span>
+		</div>
+	</div>
+	<div class="lianxi">
+		<div class="lx_tit">
+			<b></b>
+			<span>聚康达微信 </span>
+			<i>(扫描下方二维码，马上有惊喜)</i>
+		</div>
+		<p style="text-align: center; background-color: #fff;">
+			<img src="../images/erweim.png" width="150" height="150" />
+		</p>	
+	</div>
+	
+	
+</body>	
+</html>
+<script>
+	document.getElementById('shenqingshouhou').addEventListener('tap', function() {
+		  //打开关于页面
+		  mui.openWindow({
+		    url: 'shenqingshouhou.html', 
+		    id:'shenqingshouhou'
+		  });
+		});
+		document.getElementById('shouhouxiangqing').addEventListener('tap', function() {
+		  //打开关于页面
+		  mui.openWindow({
+		    url: 'shouhouxiangqing.html', 
+		    id:'shouhouxiangqing'
+		  });
+		});
+</script>
+

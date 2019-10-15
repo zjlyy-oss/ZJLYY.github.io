@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>申请售后</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <script src="../js/mui.min.js"></script> 
+    <script src="../js/app.js"></script> 
+    <link href="../css/mui.css" rel="stylesheet"/>
+    <link href="../css/cui.css" rel="stylesheet"/>
+    <link href="../css/iconfont.css" rel="stylesheet"/> 
+    <link href="../css/jkdApp.css" rel="stylesheet"/> 
+    <style>
+    	.mui-checkbox{overflow: hidden; width: 50px; height: 26px; position: absolute; 
+    	right: 20px; top: 50%; margin-top: -13px;}
+    	.mui-checkbox input[type="checkbox"]{top: 0;}
+    	.fszj{padding:10px; color: #777;}
+    	.fszj span,.fszj i{ color: #777;}
+    	.cui-wuliu-color{ color: #FFFFFF; height: 48px; line-height: 48px;}
+    	.mui-content .wfk .daifahuo{ font-size: 16px; color: #FFFFFF; margin-bottom: 8px;}
+    	.mui-content .wfk .daifahuo span{ color: #FFFFFF;}
+    	.mui-content .wfk p{ font-size: 14px; padding: 2px 0;}
+    	.icon-iconwodeyouhuiquan2:before{ font-size: 28px;}
+    	.mui-button-red{ margin-bottom: 30px;}
+    	.mui-table-view .mui-table-view-cell,.mui-table-view .mui-table-view-cell i{ color: #777;}
+    	.mui-table-view-cell.mui-table-view-cell-red{ color: #fe5054;}
+    	.mui-table-view-cell i.ipadd20{ color: #fe5054; padding-right: 15px;}
+    	.mui-table-view:before{ background-color: #FFFFFF;}
+    	.mui-table-view:after{ background-color: #FFFFFF;}
+    	.mui-table-view.mui-grid-view .mui-table-view-cell{ padding: 0 22px 10px 0;}
+    	.mui-table-view.mui-grid-view{ padding-bottom: 0;}
+    	.mui-numbox [class*="mui-numbox-btn"] {
+		    width: 26px;
+		}
+		.tkxq{width: 146px; height: 24px; float: right; border: 2px solid #fe5054; overflow: hidden; border-radius: 4px;}
+		.tkxq span{display: inline-block; float: left; text-align: center; color: #777;}
+		.tkxq span.cur{background-color: #fe5054; color: #fff;}
+		.tkxq span:first-of-type{width: 46%;}
+		.tkxq span:last-of-type{width: 54%;}
+		.sczp{float: right; border: 1px solid #e5e5e5; width: 80px; height: 80px; overflow: hidden;position: relative;}
+		.sczp .file{display: inline-block; width: 80px; height: 80px; opacity: 0; position: absolute; left: 0; top: 0;}
+		.sczp span{text-align: center; display: block;}
+		.sczp span:first-of-type{border-bottom: 1px solid #E5E5E5; height: 54px; line-height: 54px; font-size: 18px;}
+		.sczp span:last-of-type{line-height: 24px;}
+    </style>
+</head>
+<body style="padding-bottom: 50px; background-color: #fff;">
+<header class="mui-bar mui-bar-nav">
+	<a class="mui-action-back  mui-pull-left back_prev"></a>
+	<h1 class="mui-title" id="title">申请售后</h1>
+	<a id="wuliuadd" class="mui-pull-right cui-wuliu-color">提交申请</a>
+</header>
+<div style=" display: block;padding-top:44px;" id='gwc_list'> 
+	<div class="shijian" style="display: none;">
+		 <p>在<em>10小时54分钟</em>内自动退款到付款账户。</p>
+	</div>
+	<div class="mui-content" style="background: none;">
+		<div class="wfk" style="margin: 10px 0; overflow: hidden;">
+			<div class="daifahuo"><span class="mui-icon iconfont_ww icon-iconwodeyouhuiquan2"></span> 待发货</div>
+			<p>订单编号：100123456789</p>
+			<p>订单日期：2015/06/07</p>
+			<p>订单金额：￥98.0</p>
+		</div>
+		<div class="pro_info">
+			<h3>商品信息</h3>
+			<div class="product">
+				<a href="">
+					<dl>
+						<dt><img src="../images/img/img1.jpg" class="auto100imgMax"/></dt>
+						<dd>
+							<h4>活力达秘鲁玛卡精片吗咖片 90片</h4>
+							<span><em>￥98.00</em> ×1</span>
+						</dd>
+					</dl>
+				</a>
+			</div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					退货数量
+					<div class="mui-numbox" data-numbox-min='1' style="float: right;">
+						<button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+						<input class="mui-numbox-input" type="number" value="5" />
+						<button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					退款金额
+					<input type="text" placeholder="点击输入退款金额" style="float: right; display: inline-block; width: 60%; height: 20px; margin-bottom: 0;text-align: right; padding-right: 0; border:1px solid #fff;"/>
+				</li>
+				<li class="mui-table-view-cell">
+					退款需求
+					<div class="tkxq">
+						<span class="cur" id="jtk">仅退款</span>
+						<span class="" id="tkbth">退款并退货</span>
+					</div>
+					<script>
+						document.getElementById('tkbth').addEventListener('tap', function() {
+							this.setAttribute('class','cur');
+							this.previousElementSibling.setAttribute('class','')
+						});
+						document.getElementById('jtk').addEventListener('tap', function() {
+							this.setAttribute('class','cur');
+							this.nextElementSibling.setAttribute('class','')
+						});
+					</script>
+				</li>
+				<li class="mui-table-view-cell">
+					退款说明
+					<input type="text" placeholder="点击输入退款原因" style="float: right; display: inline-block; width: 60%; height: 20px; margin-bottom: 0;text-align: right; padding-right: 0; border:1px solid #fff;"/>
+				</li>
+				<li class="mui-table-view-cell">
+					上传照片
+					<div class="sczp">
+						<span>+</span>
+						<span>上传照片</span>
+						<input type="file" class="file" />
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						退款帐号<i class="mui-pull-right ipadd20">支付宝账号 vip666@163.com 佚名</i>
+					</a>
+				</li>
+				
+			</ul>
+			<div class="mui-button-row">
+				<button type="button" class="mui-btn mui-btn-block mui-text-center mui-button-red" id="shouhouxiangqing" style="padding: 10px 0;">提交申请</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--底部信息-->
+
+</body>	
+<script type="text/javascript">
+	document.getElementById('shouhouxiangqing').addEventListener('tap', function() {
+	  //打开申请售后编辑页面
+	  mui.openWindow({
+	    url: 'shouhouxiangqing.html', 
+	    id:'shouhouxiangqing'
+	  });
+	});
+</script>
+</html>

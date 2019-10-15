@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <title></title>
+	    <script src="../js/mui.min.js"></script>
+	    <script src="../js/jquery-1.8.2.min.js"></script>
+	    
+	    <link href="../css/mui.css" rel="stylesheet"/>
+	  <link href="../css/jkdApp.css" rel="stylesheet"/> 
+	  <link href="../css/iconfont.css" rel="stylesheet"/> 
+		<title></title>
+		<style>
+		   body{ background: #ffffff;}
+		    .mui-bar .mui-icon {font-size: 24px; margin-top: 2px;}
+			.iconfont{color: #FFFFFF;}
+			
+			.mui-bar-nav.mui-bar .mui-icon {padding-left: 25px;}
+		</style>
+	</head>
+	<body style="background-color: #ececec; padding-bottom: 50px;">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back  mui-pull-left back_prev" ></a>
+			<a onClick="toshare()"  class="mui-icon iconfont icon-fenxiang mui-pull-right"></a>
+			<a class="mui-icon iconfont  icon-shoucang  mui-pull-right"></a>
+		    <h1 class="mui-title">商品详情</h1>
+		</header>
+		<div class="mui-content">
+			  <!--大图轮播-->
+			  <div id="slider" class="mui-slider" >
+			<div class="mui-slider-group mui-slider-loop">
+				<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#">
+						<img src="../images/img/img123.jpg">
+					</a> 
+				</div>
+				<!-- 第一张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="../images/img/img123.jpg">
+					</a>
+				</div>
+				<!-- 第二张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="../images/img/img123.jpg">
+					</a>
+				</div>
+				<!-- 第三张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="../images/img/img123.jpg">
+					</a>
+				</div>
+				<!-- 第四张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="../images/img/img123.jpg">
+					</a>
+				</div>
+				<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#">
+						<img src="../images/img/img123.jpg">
+					</a>
+				</div>
+			</div>
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div>
+		</div>
+
+		</div>
+		<!--大图轮播结束-->	
+			<style>
+				.gd_cont{
+					position: relative;
+					margin-top: 0;
+					margin-bottom: 0;
+					padding-left: 0;
+					list-style: none; padding-bottom: 20px;
+				}
+				.gd_cont .title{color:#231815;font-size: 17px;line-height: 22px; padding: 14px 10px;}
+				.gd_cont .sm{ font-size: 15px; padding: 4px 10px;}
+				.gd_cont .xj{ color: #ff6666; font-size: 20px; margin-left: 10px;}
+				.gd_cont .yj{ text-decoration: line-through; margin-left: 10px; color: #8f8f94;} 
+				.gd_cont .lin{ width: 100%; height: 1px; background: #cccccc; margin:6px 0 8px; overflow: hidden;}
+				.gd_cont .kj{ height: 10px; }
+				.mui-table-view .mui-media-object {
+				 line-height:none; 
+				 max-width: 60px; 
+				 height:auto; 
+				}
+				.mui-table-view-cell p{
+				white-space: normal !important;
+			    text-overflow: ellipsis;
+			    word-wrap: break-word;
+			    -webkit-line-clamp: 2;
+			    -webkit-box-orient: vertical; color: #000; font-size: 12px;} 
+			    .mui-input-row label~span{
+					float: right;
+					width: 65%;
+					margin-bottom: 0;
+					padding-left: 0;}
+					.good_xq { margin-top: 15px; padding: 0 10px;}
+					.good_xq dl dd{ margin: 0;padding: 0; font-size: 12px!important;}
+					.good_xq p{font-size: 12px;} 
+					
+				.mui-bar-tab .mui-tab-item {width: 15%; } 
+					.mui-bar-tab .mui-tab-item1 {
+					    display:inline-block;height: 32px; line-height: 32px;
+					    text-align: center;
+					    width: 30%; background-color: #fe5054;
+					     margin-top: 9px;
+					  	 margin-left: 3%; border-radius: 3px;
+					     margin-right: 10px;
+					}
+				.mui-bar-tab .mui-tab-item2 {display:inline-block;height: 32px; line-height: 32px;
+                 text-align: center;width: 18%;border-radius: 3px; background: #cccccc; color: #000; border-color: #666666;
+                  margin-top: 9px;
+                 }
+		.mui-bar-tab{ line-height: 50px; background-color: #fff;}
+		.mui-bar-tab .mui-tab-item .icon-gouwuche{width: 36px!important;height: 27px;}
+		.linglun_ul{border: 1px solid #dadada; margin: 20px 0; overflow: hidden; border-left: none; border-right: 0; background-color: #F0F0F0;}
+		.linglun_ul li{display: block; padding: 10px;}
+		.linglun_ul li a{margin: 0!important; padding: 0!important; position: relative;padding-left: 50px!important;}
+		.linglun_ul li a .pic{position: absolute; left: 0; top: 0; width: 40px;}
+		</style>
+		<div class="gd_cont">
+			 <h4 class="title">【美国原装进口】ESMOND丽芙宝 PK美白丸身每天2粒  还您嫩白肌肤</h4>
+			 <span class="xj">￥198.00</span><span class="yj">￥398.00</span>
+			 <div class="lin"></div>
+			  <h4 class="sm">*保税区直邮下单时需提供真实姓名及身份证。</h4>
+			  <h4 class="sm">*本产品由金活健康之家，提供发货服务。</h4>
+			  
+			  <div class="lin"></div>
+			  <ul class="linglun_ul">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<div class="pic">
+							<img class="auto100imgMax" src="../images/goods/img3322.png">
+						</div>
+						<div class="desc"> 
+							<p>小达子说： </p>
+							<p>
+美国原装进口 ESMOND丽芙宝 PK美白丸全身该商品参与了公益宝贝计划，卖家承诺每笔成交将为孤儿保障大行动捐赠1.0元。本品由多达9种肌肤营养元素通过专业配方组成，是爱美人士内服的首选营养品。现买2件打9折，买3件打8.5折，买4件打8折，时间有限，欲购从速。</p>
+							</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+			 
+			 <div class="good_xq">
+			 	 <p>商品简介</p>
+					<dl>
+						<dd>【品      牌】 爱司盟</dd>
+						<dd>【规      格】707mg*60片</dd>
+						<dd>【产      地】美国</dd>
+						<dd>【储存方法】置于阴凉干燥处，远离直射</dd>
+						<dd>【保  质 期】36个月</dd>
+						<dd>【适应人群】成人</dd>
+						<dd>【系      列】养肤片</dd>
+						<dd>【产品剂型】片剂</dd>
+						<dd>【温馨提示】该商品参与了公益宝贝计划，卖家承诺每笔成交将为孤儿保障大行动捐赠1.0元。该商品已累积捐赠2501笔.</dd>
+					</dl>
+					
+			  </div> 
+		</div>
+		
+			
+		</div>
+		<div style=" height:42px; line-height: 41px; border-top: 1px solid #e2e2e2; position: relative; text-align: center;">
+			<p style="height: 2px; border-bottom: 2px solid #c5c5c5; position: absolute; left: 0; top: 20px; width: 100%; z-index: -1"></p>
+			<span style="background-color: #ececec; color: #777; font-size: 14px; padding: 0 8px;">继续拖动，查看图文详情</span>
+		</div>
+		<nav class="mui-bar mui-bar-tab"> 
+			<a class="mui-tab-item mui-pull-left" id="gouwche">
+			<span class="mui-icon iconfont  icon-gouwuche" style="top: 8px;">
+				<span class="mui-badge">9</span>
+			</span>
+		    </a>
+			<a class="mui-btn-danger mui-tab-item1 mui-pull-right" href="javascript:join();">
+			加入购物车
+			</a>
+			<a class="mui-btn-danger mui-tab-item2 mui-pull-right" href="javascript:join();">
+			客服
+			</a>
+		</nav>
+		<div class="am-share">
+		  <ul class="am-share-sns">
+		    <li><a href="#"> <i class="share-icon-wx"></i> <span>微信</span> </a> </li>
+		    <li><a href="#"> <i class="share-icon-pyq"></i> <span>朋友圈</span> </a> </li>
+		    <li><a href="#"> <i class="share-icon-wb"></i> <span>微博</span> </a> </li>
+		    <li><a href="#"> <i class="share-icon-qq"></i> <span>QQ好有</span> </a> </li>
+		    <li><a href="#"> <i class="share-icon-kj"></i> <span>QQ空间</span> </a> </li>
+		    <li><a href="#"> <i class="share-icon-lj"></i> <span>复制链接</span> </a> </li>
+		  </ul>
+		  <div class="am-share-footer"><button class="share_btn">取消</button></div>
+		</div>
+		<script type="text/javascript">
+			function toshare(){
+				$(".am-share").addClass("am-modal-active");	
+				if($(".sharebg").length>0){
+					$(".sharebg").addClass("sharebg-active");
+				}else{
+					$("body").append('<div class="sharebg"></div>');
+					$(".sharebg").addClass("sharebg-active");
+				}
+				$(".sharebg-active,.share_btn").click(function(){
+					$(".am-share").removeClass("am-modal-active");	
+					setTimeout(function(){
+						$(".sharebg-active").removeClass("sharebg-active");	
+						$(".sharebg").remove();	
+					},300);
+				})
+			}	
+		</script>
+		<style type="text/css">
+			.am-share { font-size: 14px; display: none; border-radius: 0; bottom: 0; left: 0; position: fixed; text-align: center; -webkit-transform: translateY(100%); -ms-transform: translateY(100%); transform: translateY(100%); -webkit-transition: -webkit-transform 300ms; transition: transform 300ms ; width: 100%; z-index: 1110; }
+			.am-modal-active { display: block; transform: translateY(0px);  -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0) }
+			.am-modal-out { z-index: 1109; -webkit-transform: translateY(100%); -ms-transform: translateY(100%); transform: translateY(100%) }
+			.am-share-footer .share_btn { color: #555;  display: block; width: 100%; background-color: #fff; border: 1px solid #e6e6e6; border-radius: 0; cursor: pointer;  font-size: 16px; font-weight: 400; line-height: 1.2; padding: 0.625em 0; text-align: center; transition: background-color 300ms ease-out 0s, border-color 300ms ease-out 0s; vertical-align: middle; white-space: nowrap;font-family:"微软雅黑";  }
+			
+			.am-share-sns { background-color: #fff; border-radius: 0 0 2px 2px; padding-top: 15px; height:auto; zoom:1; overflow:auto; }
+			
+			.am-share-sns li { margin-bottom: 15px; display: block; float: left; height: auto;  width: 33.3%; }
+			
+			.am-share-sns a { color: #555; display: block; text-decoration:none; }
+			.am-share-sns span { display: block; }
+			
+			.am-share-sns li i { background-position: center 50%; background-repeat: no-repeat; background-size: 65px 65px; background-color: #ccc; color: #fff; display: inline-block; font-size: 18px; height: 65px; margin-bottom: 5px; width: 65px; }
+			.am-share-sns .share-icon-wx { background: url(../images/wxicon.png) no-repeat; }
+			.am-share-sns .share-icon-pyq { background: url(../images/pyqicon.png) no-repeat; }
+			.am-share-sns .share-icon-wb { background: url(../images/wbicon.png) no-repeat; }
+			.am-share-sns .share-icon-qq { background: url(../images/qqicon.png) no-repeat; }
+			.am-share-sns .share-icon-kj { background: url(../images/kjicon.png) no-repeat; }
+			.am-share-sns .share-icon-lj { background: url(../images/ljicon.png) no-repeat; }
+			
+		</style>
+		<script>
+			mui.init();
+			mui("#slider").slider({interval: 3000});;
+			document.getElementById('gouwche').addEventListener('tap', function() {
+			  //购物车
+			  mui.openWindow({
+			    url: '../html/gwc.html', 
+			    id:'gwc'
+			  });
+			});
+		</script>
+	</body>
+	<script>
+
+		document.getElementById("welcome").addEventListener('tap', function(e) {
+			//显示启动导航
+			mui.openWindow({
+				id: 'guide',
+				url: 'guide.html',
+				show: {
+					aniShow: 'fade-in',
+					duration: 300
+				},
+				waiting: {
+					autoShow: false
+				}
+			});
+		});
+
+
+	</script>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+     <title>提交订单</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <script src="../js/mui.min.js"></script> 
+    <script src="../js/app.js"></script> 
+    <link href="../css/mui.css" rel="stylesheet"/>
+    <link href="../css/iconfont.css" rel="stylesheet"/> 
+    <link href="../css/jkdApp.css" rel="stylesheet"/> 
+    <style>
+    	.mui-checkbox{overflow: hidden; width: 50px; height: 26px; position: absolute; 
+    	right: -10px; top: 50%; margin-top: -10px;}
+    	.mui-checkbox input[type="checkbox"]{top: 0;}
+    	.icon-dizhi:before{margin-right: 0; font-size: 26px; color: #fff;}
+    	.icon-jiantou:after{top: 17px; right: 10px; font-size: 20px;}
+    </style>
+    
+</head>
+<body style="background-color: #fff;">
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back  mui-pull-left back_prev"></a>
+		<h1 class="mui-title" id="title">提交订单</h1>
+	</header>
+	
+	<div style=" display: block;padding-top: 44px;" id='gwc_list'> 
+		<div class="shijian">
+			<p>请在<em>10:54</em>内提交订单，时间结束后商品可能被抢完。</p>
+		</div>
+		<div class="mui-content" style="margin-top: 10px;">
+			<div id="xzdz" class="wfk iconfont_addr icon-jiantou" style="position: relative;">
+				<h4 class="mui-icon iconfont icon-dizhi" style="font-size: 14px;">新增收货地址</h4>
+			</div>
+			
+			<div class="pro_info">
+				<h3>订单1<i>活力达北京发货</i></h3>
+				<div class="product">
+					<a href="">
+						<dl class="mui-navigate-right">
+							<dt><img src="../images/img/img1.jpg" class="auto100imgMax"/></dt>
+							<dd>
+								<h4>活力达秘鲁玛卡精片吗咖片 90片</h4>
+								<span><em>￥98.00</em> ×1</span>
+							</dd>
+						</dl>
+					</a>
+				</div>
+				<div class="fszj">
+					<span>发货方式</span><i>快递：8元</i>
+				</div>
+				<div class="fszj">
+					<span>订单总计</span><i>￥68.50</i>
+				</div>
+			</div>
+			<div class="youhui_jm">
+				<h3>优惠减免</h3>
+				<div id="yhq" class="fszj mui-navigate-right" style="border-top: none; position: relative;">
+					<span>优惠券</span><i style="padding-right: 40px;">使用优惠券</i>
+				</div>
+				<div class="fszj" style=" padding: 10px 10px;">
+					<span style="display: block; overflow: hidden; margin-bottom: 10px;">备注：</span>
+					<textarea placeholder="填写给商家的留言" style="display: block; width: 100%; border: 1px solid #E5E5E5; color: #8f8f94; margin-bottom: 0; height: 100px;"></textarea>
+				</div>
+			</div>
+			<div class="pay_for">
+				<h3 style="padding-right: 10px;">选择支付方式<span>合计金额：<i>86.50</i></span></h3>
+				<div class="fszj zf">
+					<span style="background: url(../images/pay_icon.png) left center no-repeat;">支付宝</span>
+					<div class="mui-checkbox">
+						<input name="checkboxd" type="checkbox" checked onclick="check()">
+					</div>
+				</div>
+				<div class="fszj zf">
+					<span style="background: url(../images/wxPay_icon.png) left center no-repeat; background-size: auto 34px!important; ">微信支付</span>
+					<div class="mui-checkbox">
+						<input name="checkboxd" type="checkbox" checked onclick="check()">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="pay">
+		<h3>支付宝支付</h3>
+		<span>
+			<i>总计:￥98.00</i>
+			<a href="">立即付款</a>
+		</span>
+	</footer>
+</body>	
+<script>
+	document.getElementById('xzdz').addEventListener('tap', function(){
+		  //打开选择地址页面
+		  mui.openWindow({
+		    url: 'addr_manage.html', 
+		    id:'addr_manage'
+		  });
+		});
+	
+	document.getElementById('yhq').addEventListener('tap', function(){
+		  //打开使用优惠券页面
+		  mui.openWindow({
+		    url: 'youhui_shiyong.html', 
+		    id:'youhui_shiyong'
+		  });
+		});
+</script>
+</html>

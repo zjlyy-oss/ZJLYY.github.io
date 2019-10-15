@@ -1,0 +1,60 @@
+#wfclyySelect{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 88%;
+	margin: 50px auto 10px;
+	z-index: 99999;
+	background: #ffffff;
+	font-size: 20px;
+}
+.keyboard-select-box{
+	background-color: #ffffff;
+	border-radius: 3px;
+	height: auto;
+	overflow: hidden;
+	z-index: 99999;
+}
+.keyboard-select-box .mui-line{
+	text-align: center!important;
+	padding-top: 5px!important;
+}
+.keyboard-select-box  .mui-input-group .mui-input-row{
+	height: 50px!important;
+}
+.keyboard-select-box .mui-checkbox input[type=checkbox],.keyboard-select-box .mui-radio input[type=radio]{
+	top: 10px!important;
+}
+/*.keyboard-select-box #keyboard-qtyy{
+	display: none;
+	padding-top: 5px;
+}*/
+#keyboard-qtyyText{
+	width: 180px;
+	border: 1px solid #dddddd;
+	border-radius: 3px;
+	height: 30px;
+	padding: 3px 0 3px 3px;
+	margin: 10px 0px 10px 10px;
+	font-size: 14px;
+}
+#keyboard-qtyyBtn{
+	width: 100px;
+	background: #007AFF;
+	color: #FFFFFF;
+	margin: 10px;
+	border-radius: 3px;
+}
+
+.opacityOut{display:none}
+.a-bounceinB{bottom:0;border:0;-webkit-animation:bounceinB 0.3s ease-in backwards;-moz-animation:bounceinB 0.3s ease-in backwards;-ms-animation:bounceinB 0.3s ease-in backwards;animation:bounceinB 0.3s ease-in backwards;}
+/*.a-bounceoutB{bottom:-250px;border:0;padding:0;-webkit-animation:bounceoutB 0.3s ease-out backwards;-moz-animation:bounceoutB 0.3s ease-out backwards;-ms-animation:bounceoutB 0.3s ease-out backwards;animation:bounceoutB 0.3s ease-out backwards;}
+@-webkit-keyframes bounceoutB{0%{opacity:1;-webkit-transform:translateY(-250px);}100%{opacity:0;-webkit-transform:translateY(0);}}
+@-moz-keyframes bounceoutB{0%{opacity:1;-webkit-transform:translateY(-250px);}100%{opacity:0;-webkit-transform:translateY(0);}}
+@-ms-keyframes bounceoutB{0%{opacity:1;-webkit-transform:translateY(-250px);}100%{opacity:0;-webkit-transform:translateY(0);}}
+@keyframes bounceoutB{0%{opacity:1;-webkit-transform:translateY(-250px);}100%{opacity:0;-webkit-transform:translateY(0);}}
+@-webkit-keyframes bounceinB{0%{opacity:0;-webkit-transform:translateY(250px);}100%{opacity:1;-webkit-transform:translateY(0);}}
+@-moz-keyframes bounceinB{0%{opacity:0;-webkit-transform:translateY(250px);}100%{opacity:1;-webkit-transform:translateY(0);}}
+@-ms-keyframes bounceinB{0%{opacity:0;-webkit-transform:translateY(250px);}100%{opacity:1;-webkit-transform:translateY(0);}}
+@keyframes bounceinB{0%{opacity:0;-webkit-transform:translateY(250px);}100%{opacity:1;-webkit-transform:translateY(0);}}*/

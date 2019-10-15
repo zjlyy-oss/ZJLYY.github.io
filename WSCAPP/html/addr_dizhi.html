@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+     <title>收货地址管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <script src="../js/mui.min.js"></script> 
+    <script src="../js/app.js"></script>
+    <link href="../css/mui.css" rel="stylesheet"/>
+    <link href="../css/cui.css" rel="stylesheet"/>
+    <link href="../css/iconfont.css" rel="stylesheet"/>
+    <link href="../css/jkdApp.css" rel="stylesheet"/>
+    <!--页面添加csst和js-->
+	<link href="../css/mui.picker.css" rel="stylesheet" />
+	<link href="../css/mui.poppicker.css" rel="stylesheet" />
+	<script src="../js/mui.picker.js"></script>
+	<script src="../js/mui.poppicker.js"></script>
+	<style>
+    	.cui-wuliu-color{ color: #FFFFFF; height: 45px; line-height: 45px;}
+	</style>
+</head>
+<body style="padding-bottom: 57px;">
+<!--头部信息-->
+<header class="mui-bar mui-bar-nav">
+	<a class="mui-action-back  mui-pull-left back_prev"></a>
+	<h1 class="mui-title" id="title">新增收货地址</h1>
+	<a id="wuliuadd" class=" mui-icon-right-nav mui-pull-right cui-wuliu-color">保存</a>
+</header>
+<!--增加收货地址-->
+<div class="mui-content">
+	<form class="mui-input-group cui-dizhi">
+		<div class="mui-input-row">
+			<label for=""><span>*</span> 收货人</label>
+			<input type="text" placeholder="请输入收货人" class="mui-input mui-input-clear" />
+		</div>
+		<div class="mui-input-row">
+			<label for=""><span>*</span> 手机号码</label>
+			<input id="phone" onblur="Checkreg();" type="text" placeholder="请输入您的手机号码" class="mui-input mui-input-clear" />
+		</div>
+		<script>
+			function Checkreg() 
+			{ 
+				//验证电话号码手机号码
+				var phoneObj = document.getElementById('phone');
+				if (phoneObj.value != ""){ 
+					var phoneVal=phoneObj.value; 
+					var p1 = /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/; 
+					var me = false; 
+					if (p1.test(phoneVal))me=true; 
+					if (!me){ 
+						phoneObj.value=''; 
+						mui.toast('请输入正确的手机号码');
+						phoneObj.focus(); 
+						return false; 
+					}
+				} 
+			} 
+		</script>
+		<div class="mui-input-row">
+			<label for=""><span>*</span> 省份</label>
+			<button id='showUserPicker' class="mui-btn mui-btn-block" type='button'>--请选择--</button>
+		</div>
+		<div class="mui-input-row">
+			<label for=""><span>*</span> 城市</label>
+			<button id='showUserPicker1' class="mui-btn mui-btn-block" type='button'>--请选择--</button>
+		</div>
+		<div class="mui-input-row">
+			<label for=""><span>*</span> 地区</label>
+			<button id='showUserPicker2' class="mui-btn mui-btn-block" type='button'>--请选择--</button>
+		</div>
+		<div class="mui-input-row">
+			<label for=""><span>*</span> 详细地址</label>
+			<textarea cols="2" placeholder="请输入您的详细地址" class="mui-input mui-input-clear" ></textarea>
+		</div>
+		<div class="mui-input-row">
+			<label for="">身份证号</label>
+			<input type="text" placeholder="请输入您的身份号" class="mui-input mui-input-clear" />
+		</div>
+		<div class="mui-button-row" id="saveAddr">
+			<button type="button" class="mui-btn mui-text-center mui-button-red" >保存地址</button>
+		</div>
+	</form>
+</div>
+<!--底部信息-->
+
+<script>
+		document.getElementById('wuliuadd').addEventListener('tap', function() {
+		  //返回提交订单页
+			 mui.openWindow({
+			    url: 'addr_manage.html', 
+			    id:'addr_manage'
+			 });
+		});
+		document.getElementById('saveAddr').addEventListener('tap', function() {
+		  //返回提交订单页
+			 mui.openWindow({
+			    url: 'addr_manage.html', 
+			    id:'addr_manage'
+			 });
+		});
+	
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					//普通示例
+					var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: 'ywj',
+						text: '北京市'
+					}, {
+						value: 'aaa',
+						text: '上海市'
+					}, {
+						value: 'lj',
+						text: '广州'
+					}, {
+						value: 'ymt',
+						text: '深圳'
+					}]);
+					var showUserPickerButton = doc.getElementById('showUserPicker');
+					var userResult = doc.getElementById('showUserPicker');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							userResult.innerText = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					/*第二个菜单*/
+					var usercity = new $.PopPicker();
+					usercity.setData([{
+						value: 'ywj',
+						text: '海淀区'
+					}, {
+						value: 'aaa',
+						text: '海淀2区'
+					}, {
+						value: 'lj',
+						text: '海淀3区'
+					}, {
+						value: 'ymt',
+						text: '海淀4区'
+					}]);
+					var showcityButton = doc.getElementById('showUserPicker1');
+					var cityResult = doc.getElementById('showUserPicker1');
+					showcityButton.addEventListener('tap', function(event) {
+						usercity.show(function(items) {
+							cityResult.innerText = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					/*第三个菜单*/
+					var userdiqu = new $.PopPicker();
+					userdiqu.setData([{
+						value: 'ywj',
+						text: '第一个县'
+					}, {
+						value: 'aaa',
+						text: '第二个县'
+					}, {
+						value: 'lj',
+						text: '第三个县'
+					}, {
+						value: 'ymt',
+						text: '第四个县'
+					}]);
+					var showdiquButton = doc.getElementById('showUserPicker2');
+					var diquResult = doc.getElementById('showUserPicker2');
+					showdiquButton.addEventListener('tap', function(event) {
+						userdiqu.show(function(items) {
+							diquResult.innerText = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+				});
+			})(mui, document);
+		</script>
+</body>
+</html>

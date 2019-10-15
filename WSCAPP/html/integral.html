@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+     <title>积分兑换</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <script src="../js/mui.min.js"></script> 
+    <script src="../js/app.js"></script> 
+    <link href="../css/mui.css" rel="stylesheet"/>
+    <link href="../css/iconfont.css" rel="stylesheet"/> 
+    <link href="../css/jkdApp.css" rel="stylesheet"/> 
+    <style>
+    	.mui-table-view-cell{padding: 15px;}
+    	.zcdl_div{height: 90px;margin-top: -45px!important;}
+    	.zcdl_div p span{color: #fff; font-size: 76px; display: block; line-height: 64px;}
+    	.zcdl_div p em{ font-size: 24px!important; display: block;}
+    	.jifen_cont {background-color: #fff; overflow: hidden; padding: 15px 10px; }
+    	.jifen_cont ol{padding-left: 0; color: #777;}
+    	.jifen_cont ol li{color: #777; overflow: hidden; font-size: 18px;list-style:inside none outside;}
+    	.jifen_cont ol li span{padding-left: 10px;}
+    </style>
+  
+   
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back  mui-pull-left back_prev"></a>
+		<h1 class="mui-title" id="title">积分兑换</h1>
+		<a style="font-size: 18px; color: #FFF; line-height: 48px;" class="mui-icon-right-nav mui-pull-right"  id="jifen_mx" >明细</a>
+	</header>
+	<div class="mui-content">
+		<div class="zcdl">
+			<img src="../images/jifen_bg.jpg" />
+			<div class="zcdl_div">
+				<p>
+					<span class="num">0</span>
+					<em>微商城积分</em>
+				</p>
+			</div>
+		</div>
+		<div class="jifen_cont">
+			<h3>积分兑换 </h3>
+			<ol>
+				<li><span>每一张成功交易的订单，所付现金部分（含当当礼品 
+			        卡）都可获得积分，不同商品积分标准不同，获得积
+			     分以订单提交时所注明的积分为准；</span></li>
+			     <li><span>贵宾会员购物时，将额外获得相应级别的级别赠分；</span></li>
+			     <li><span>阶段性的积分促销活动，也会给您带来额外的促销赠
+			      分，详见积分活动；</span></li>
+			     <li><span>促销商品不能获得积分。</span></li>
+			</ol>
+			
+		</div>
+	</div>
+</body>	
+<script>
+		//tap为mui封装的单击事件，可参考手势事件章节
+		document.getElementById('jifen_mx').addEventListener('tap', function() {
+		  //打开关于页面
+		  mui.openWindow({
+		    url: 'integral_detail.html', 
+		    id:'integral_detail'
+		  });
+		});
+		
+	</script>
+</html>

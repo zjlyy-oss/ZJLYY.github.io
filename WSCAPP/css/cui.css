@@ -1,0 +1,28 @@
+/*新增收货地址*/
+.cui-dizhi{ padding-top: 10px; }
+.cui-dizhi .mui-input-row{ height: auto; padding: 4px 0;}
+.cui-dizhi label{ width: 32%; color: #231815; }
+.cui-dizhi label span{ color: #fe5054; }
+.cui-dizhi input{ color: #777777; }
+.cui-dizhi .mui-input{ width: 68%; font-size: 14px; color: #777777; }
+.cui-dizhi .mui-input-row:after{ left: 0px;}
+.cui-dizhi  input::-webkit-input-placeholder,textarea::-webkit-input-placeholder { color: #777777; } 
+.cui-dizhi input:-moz-placeholder,textarea:-moz-placeholder {color: #777777; } 
+
+.cui-dizhi .mui-btn-block{ margin-bottom: 0;}
+.cui-dizhi .mui-btn{ float: left; width: 67%; border: 0; text-align: left; font-size: 14px; color: #777; padding: 10px 0;}
+.cui-dizhi .mui-button-red{ background-color: #fe5054; color: #FFF; margin: 0 auto; float: none;}
+.cui-dizhi .mui-button-row{ height: auto; padding: 15px 0; font-weight: bold; border-top: #f1f1f1 5px solid; }
+
+/* 设置中心 */
+.cui-shezhi-page .mui-title{ color: #FFF; }
+.cui-shezhi-page .mui-table-view-cell{ padding: 13px 15px; }
+.cui-shezhi-page .mui-table-view-cell span{ color: #777; padding-left: 5px; font-size:11px;}
+.cui-shezhi-page .cui-li-view a{ font-size: 15px; }
+.mui-button-red{ background-color: #fe5054; color: #FFF; margin: 0 auto; float: none; width: 80%; margin-top: 10px; border: none; }
+.mui-button-red2{ margin-top: 0; }
+.cui-shezhi-page .icon-tixian:before{font-size: 20px;}
+.cui-shezhi-page .mui-icon-trash:before{ font-size: 20px;}
+.cui-shezhi-page .mui-icon-locked:before{ font-size: 20px;}
+
+

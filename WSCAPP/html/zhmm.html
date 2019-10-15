@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+     <title>找回密码</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <script src="../js/mui.min.js"></script> 
+    <script src="../js/app.js"></script> 
+    <link href="../css/mui.css" rel="stylesheet"/>
+    <link href="../css/iconfont.css" rel="stylesheet"/> 
+    <link href="../css/jkdApp.css" rel="stylesheet"/> 
+    <style>
+    	.mui-content{background-color: #FFF}
+    	.mui-table-view-cell{padding: 15px;}
+    	.wjmm{float: right;}
+    </style>
+  
+   
+</head>
+<body style="background-color: #fff;">
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back  mui-pull-left back_prev"></a>
+		<h1 class="mui-title" id="title">找回密码</h1>
+		
+	</header>
+	<div class="mui-content">
+		<div class="formDiv">
+			<form>
+				<div class="mui-input-row">
+					<label class="iconfont_log_reg icon-yonghu"></label>
+					<input id="phone" type="text" onblur="Checkreg();" class="mui-input-clear" placeholder="请输入您的手机号">
+				</div>
+				<script>
+					function Checkreg() 
+					{ 
+						//验证电话号码手机号码
+						var phoneObj = document.getElementById('phone');
+						if (phoneObj.value != ""){ 
+							var phoneVal=phoneObj.value; 
+							var p1 = /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/; 
+							var me = false; 
+							if (p1.test(phoneVal))me=true; 
+							if (!me){ 
+								phoneObj.value=''; 
+								mui.toast('请输入正确的手机号码');
+								phoneObj.focus(); 
+								return false; 
+							}
+						} 
+					} 
+				</script>
+				<div class="mui-input-row">
+					<label class="iconfont_log_reg icon-youjian"></label>
+					<input type="text" class="mui-input-clear" placeholder="请输入短信验证码">
+					<a href="">获取验证码</a>
+				</div>
+				<div class="mui-input-row">
+					<label class="iconfont_log_reg icon-mima222"></label>
+					<input id="passw" type="password" class="mui-input-clear" placeholder="请输入您的用户密码">
+					<a id="xsmm">显示密码</a>
+				</div>
+				<button id="login" type="button" class="mui-btn mui-btn-danger mui-btn-block" style="width: 100%; height: 45px; line-height:45px ; padding: 0; font-size: 18px; background: url(../images/button_bg.png) no-repeat; background-size: 100% 100%;">
+					修改密码
+				</button>
+				
+			</form>	
+		</div>
+	</div>
+</body>	
+<script>
+	//显示隐藏密码
+	document.getElementById('xsmm').addEventListener('tap', function(){
+		document.getElementById('passw').setAttribute('type','text')
+	});
+	document.getElementById('login').addEventListener('tap', function(){
+		  //打开已登录会员页面
+		  mui.openWindow({
+		    url: 'login.html', 
+		    id:'login'
+		  });
+		});
+		//显示隐藏密码
+	document.getElementById('xsmm').addEventListener('tap', function(){
+		if(this.innerHTML=='显示密码'){
+			this.innerHTML='隐藏密码';
+			document.getElementById('passw').setAttribute('type','text');
+		}else if(this.innerHTML=='隐藏密码'){
+			this.innerHTML='显示密码';
+			document.getElementById('passw').setAttribute('type','password');
+		}
+	});
+</script>
+</html>

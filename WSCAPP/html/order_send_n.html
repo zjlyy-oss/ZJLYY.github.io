@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+     <title>订单详情-待发货</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <script src="../js/mui.min.js"></script> 
+    <script src="../js/app.js"></script> 
+    <link href="../css/mui.css" rel="stylesheet"/>
+    <link href="../css/iconfont.css" rel="stylesheet"/> 
+    <link href="../css/jkdApp.css" rel="stylesheet"/> 
+    <style>
+    	.mui-checkbox{overflow: hidden; width: 50px; height: 26px; position: absolute; 
+    	right: 20px; top: 50%; margin-top: -13px;}
+    	.mui-checkbox input[type="checkbox"]{top: 0;}
+    	.fszj{padding:10px;}
+    	.icon-dizhi:before{margin-right: 0; font-size: 26px;}
+    	.mui-table-view-cell{padding: 0;}
+    	.mui-table-view-cell a{margin: 0!important;}
+    	.mui-table-view-cell > a.mui-active p.fgaiceng{display: block!important;}
+    </style>
+    
+</head>
+<body style="background-color: #fff;">
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back  mui-pull-left back_prev"></a>
+		<h1 class="mui-title" id="title">订单详情</h1>
+	</header>
+	
+	<div style=" display: block;padding-top: 44px;" id='gwc_list'> 
+		<div class="shijian">
+			<p>请在<em>10:54</em>内提交订单，时间结束后商品可能被抢完。</p>
+		</div>
+		<div class="mui-content" style="margin-top: 10px;">
+			<div class="wfk">
+				<h4 class="mui-icon iconfont_ww icon-daifahuo">待发货</h4>
+				<p class="bh">订单编号：100123456789</p>
+				<p class="time">2015-7-2  10:01</p>
+			</div>
+			<div class="address">
+				<div class="info_tit">
+					<h3 class="mui-icon iconfont icon-dizhi">收货信息</h3>
+				</div>
+				<div class="info_addr">
+					<p><em>佚名</em><em>15565313673</em></p>
+					<p>北京市北京市海淀区清河镇清河小营桥北四拨子站青尚办公区306室</p>
+				</div>
+			</div>
+			<div class="pro_info">
+				<h3>商品信息<i>活力达北京发货</i></h3>
+				<div class="product mui-table-view-cell">
+					<a href="">
+						<dl class="mui-navigate-right">
+							<dt><img src="../images/img/img1.jpg" class="auto100imgMax"/></dt>
+							<dd>
+								<h4>活力达秘鲁玛卡精片吗咖片 90片</h4>
+								<span><em>￥98.00</em> ×1</span>
+							</dd>
+						</dl>
+						<p class="fgaiceng"></p>
+					</a>
+				</div>
+				<div class="fszj " style="border-top: none;">
+					<span>发货方式</span><i>快递：8元</i>
+				</div>
+				<div class="fszj">
+					<span>订单总计</span><i>￥68.50</i>
+				</div>
+				<div class="fszj">
+					<span>优惠券</span><i style="color: #fe5054;">-10.0</i>
+				</div>
+				<div class="fszj">
+					<span>实付金额</span><i>￥96.0</i>
+				</div>
+				<div class="fszj">
+					<span>支付方式</span><i>支付宝</i>
+				</div>
+				
+			</div>
+			<div class="youhui_jm">
+				<div class="fszj" style=" padding: 10px 10px; overflow: hidden;">
+					<span style="display: block; overflow: hidden; margin-bottom: 10px; float: left;">备注：</span>
+					<div style="width: 100%; border: 1px solid #E5E5E5; float: left; color: #8f8f94;height:auto">
+						<p style="margin: 10px;">使用顺丰快递、顺丰快递尽快发货尽快发货尽快发货尽快发货</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	
+</body>	
+</html>
